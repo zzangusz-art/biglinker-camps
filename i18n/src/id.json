@@ -1049,5 +1049,15 @@
   "ps2": "Kami tidak pernah merekrut dengan menjanjikan penerimaan atau hasil tertentu.",
   "ps3": "Kami memeriksa kesiapan akademik, bahasa Inggris, dan wawancara sebelum merekomendasikan pelajar, serta menggunakan pemeriksaan dokumen berbasis AI untuk mengurangi kekurangan berkas.",
   "ps4": "Data pendaftaran, umpan balik pelajar, dan kendala operasional dilaporkan dalam format yang disepakati.",
-  "ps5": "BigLinker menangani konsultasi orang tua dan seluruh komunikasi dalam bahasa Korea."
+  "ps5": "BigLinker menangani konsultasi orang tua dan seluruh komunikasi dalam bahasa Korea.",
+  "form.send": "Kirim permintaan konsultasi",
+  "form.sending": "Mengirim…",
+  "form.okTitle": "Permintaan Anda sudah kami terima",
+  "form.okDeck": "Nomor tanda terima {id}. Kami akan meninjaunya dan menghubungi Anda melalui kontak yang Anda berikan.",
+  "form.failTitle": "Pengiriman belum berhasil",
+  "form.failDeck": "Karena gangguan jaringan, penerimaan belum dapat dipastikan. Isian Anda disimpan di perangkat ini dan akan dikirim ulang pada kunjungan berikutnya. Anda juga dapat mengirim teks di bawah ini ke biglinkerkor@gmail.com atau melalui KakaoTalk sekarang.",
+  "form.new": "Isi permintaan baru",
+  "toast.sent": "Permintaan diterima · {id}",
+  "toast.retried": "Permintaan yang sebelumnya gagal kini sudah diterima · {id}",
+  "toast.failed": "Pengiriman belum berhasil"
 }

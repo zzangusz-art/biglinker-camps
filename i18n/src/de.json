@@ -1049,5 +1049,15 @@
   "ps2": "Wir werben nie mit Zulassungs- oder Erfolgsversprechen.",
   "ps3": "Vor der Vermittlung prüfen wir schulische Leistungen, Englisch und Vorbereitung auf Interviews und verringern mit einer KI-gestützten Dokumentenprüfung Lücken in den Unterlagen.",
   "ps4": "Anmeldezahlen, Feedback der Teilnehmenden und Fragen aus dem laufenden Betrieb berichten wir in einem vereinbarten Format.",
-  "ps5": "BigLinker übernimmt die Elternberatung und die gesamte Kommunikation auf Koreanisch."
+  "ps5": "BigLinker übernimmt die Elternberatung und die gesamte Kommunikation auf Koreanisch.",
+  "form.send": "Anfrage senden",
+  "form.sending": "Wird gesendet …",
+  "form.okTitle": "Ihre Anfrage ist eingegangen",
+  "form.okDeck": "Vorgangsnummer {id}. Wir prüfen Ihre Anfrage und melden uns über die angegebenen Kontaktdaten.",
+  "form.failTitle": "Ihre Anfrage konnte nicht bestätigt werden",
+  "form.failDeck": "Wegen eines Netzwerkproblems konnten wir den Eingang nicht bestätigen. Ihre Angaben sind auf diesem Gerät gespeichert und werden beim nächsten Besuch erneut gesendet. Sie können den Text unten auch jetzt an biglinkerkor@gmail.com oder per KakaoTalk schicken.",
+  "form.new": "Neue Anfrage",
+  "toast.sent": "Anfrage eingegangen · {id}",
+  "toast.retried": "Eine frühere Anfrage ist jetzt eingegangen · {id}",
+  "toast.failed": "Ihre Anfrage konnte nicht bestätigt werden"
 }

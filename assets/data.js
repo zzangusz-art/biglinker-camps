@@ -61,7 +61,7 @@ window.GLOBE_PLACES = [
   { id: "indonesia", lon: 106.85, lat: -6.2,   langs: ["id"], side: "l" },
   { id: "clark",     lon: 120.6,  lat: 15.2,   camps: ["clark"], region: "sea", side: "l" },
   { id: "cebu",      lon: 123.9,  lat: 10.3,   camps: ["cebu"], region: "sea", side: "r" },
-  { id: "sg",        lon: 103.8,  lat: 1.35,   camps: ["sgstem", "johor"], region: "sea", side: "r" },
+  { id: "sg",        lon: 103.8,  lat: 1.35,   camps: ["sgstem", "johor"], region: "sea", side: "l" },
   { id: "goldcoast", lon: 153.4,  lat: -28.0,  camps: ["goldcoast"], region: "oc", side: "l" },
   { id: "auckland",  lon: 174.8,  lat: -36.85, camps: ["auckland"], region: "oc", side: "r" },
   { id: "jeju",      lon: 126.5,  lat: 33.4,   camps: ["jeju"], region: "kr", side: "l" }

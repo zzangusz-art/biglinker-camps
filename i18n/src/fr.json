@@ -1049,5 +1049,15 @@
   "ps2": "Nous ne recrutons jamais en promettant une admission ou des résultats.",
   "ps3": "Avant de vous adresser un élève, nous vérifions son niveau scolaire, son anglais et sa préparation aux entretiens ; notre vérification documentaire par IA limite les oublis.",
   "ps4": "Le nombre d’inscrits, les retours des élèves et les questions opérationnelles sont communiqués selon un format convenu.",
-  "ps5": "BigLinker se charge du conseil aux parents et de toute la communication en coréen."
+  "ps5": "BigLinker se charge du conseil aux parents et de toute la communication en coréen.",
+  "form.send": "Envoyer la demande",
+  "form.sending": "Envoi en cours…",
+  "form.okTitle": "Votre demande a bien été reçue",
+  "form.okDeck": "Référence {id}. Nous l’examinons et revenons vers vous avec les coordonnées indiquées.",
+  "form.failTitle": "Votre demande n’a pas pu être confirmée",
+  "form.failDeck": "Un problème réseau nous a empêchés de confirmer la réception. Vos réponses sont enregistrées sur cet appareil et seront renvoyées lors de votre prochaine visite. Vous pouvez aussi envoyer dès maintenant le texte ci-dessous à biglinkerkor@gmail.com ou par KakaoTalk.",
+  "form.new": "Nouvelle demande",
+  "toast.sent": "Demande reçue · {id}",
+  "toast.retried": "Une demande précédente a bien été reçue · {id}",
+  "toast.failed": "Votre demande n’a pas pu être confirmée"
 }

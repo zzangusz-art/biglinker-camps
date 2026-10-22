@@ -1049,5 +1049,15 @@
   "ps2": "Chúng tôi không bao giờ tuyển sinh bằng lời hứa về việc trúng tuyển hay kết quả.",
   "ps3": "Chúng tôi kiểm tra mức độ sẵn sàng về học thuật, tiếng Anh và phỏng vấn trước khi giới thiệu, đồng thời dùng công cụ kiểm tra hồ sơ bằng AI để giảm thiếu sót.",
   "ps4": "Số liệu ghi danh, phản hồi của học sinh và các vấn đề vận hành được báo cáo theo mẫu đã thống nhất.",
-  "ps5": "BigLinker phụ trách tư vấn phụ huynh và mọi trao đổi bằng tiếng Hàn."
+  "ps5": "BigLinker phụ trách tư vấn phụ huynh và mọi trao đổi bằng tiếng Hàn.",
+  "form.send": "Gửi yêu cầu tư vấn",
+  "form.sending": "Đang gửi…",
+  "form.okTitle": "Đã nhận yêu cầu của bạn",
+  "form.okDeck": "Mã tiếp nhận {id}. Chúng tôi sẽ xem xét và liên hệ lại qua thông tin bạn đã để lại.",
+  "form.failTitle": "Chưa thể hoàn tất việc gửi",
+  "form.failDeck": "Do sự cố mạng, chúng tôi chưa xác nhận được yêu cầu. Nội dung bạn nhập đã được lưu trên thiết bị này và sẽ được gửi lại vào lần truy cập sau. Bạn cũng có thể gửi nội dung bên dưới qua email (biglinkerkor@gmail.com) hoặc KakaoTalk ngay bây giờ.",
+  "form.new": "Tạo yêu cầu mới",
+  "toast.sent": "Đã nhận yêu cầu · {id}",
+  "toast.retried": "Yêu cầu chưa gửi được trước đó đã được tiếp nhận · {id}",
+  "toast.failed": "Chưa thể hoàn tất việc gửi"
 }

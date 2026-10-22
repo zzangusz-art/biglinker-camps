@@ -1049,5 +1049,15 @@
   "ps2": "We never recruit with promises of admission or outcomes.",
   "ps3": "We check academic, English and interview readiness before referral, and use an AI document check to cut omissions.",
   "ps4": "Enrolment figures, student feedback and operational issues are reported in an agreed format.",
-  "ps5": "BigLinker handles parent counselling and all communication in Korean."
+  "ps5": "BigLinker handles parent counselling and all communication in Korean.",
+  "form.send": "Send enquiry",
+  "form.sending": "Sending…",
+  "form.okTitle": "Your enquiry has been received",
+  "form.okDeck": "Reference {id}. We'll review it and get back to you using the contact details you gave.",
+  "form.failTitle": "We couldn't confirm your enquiry",
+  "form.failDeck": "A network problem stopped us confirming receipt. Your answers are saved on this device and will be sent again on your next visit. You can also send the text below to biglinkerkor@gmail.com or via KakaoTalk now.",
+  "form.new": "New enquiry",
+  "toast.sent": "Enquiry received · {id}",
+  "toast.retried": "An earlier enquiry has now been received · {id}",
+  "toast.failed": "We couldn't confirm your enquiry"
 }

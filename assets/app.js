@@ -619,257 +619,390 @@
     });
   }
 
-  /* ---------- World map (Korea ↔ World) ---------- */
+  /* ---------- Globe (Korea ↔ World, both directions at once) ---------- */
   var WorldMap = (function () {
-    var W = window.WORLD_MAP;
-    var mapRoot = $('#worldmap');
-    if (!W || !mapRoot) return { relabel: function () {}, init: function () {} };
-    var HUB = window.MAP_HUB, OUT = window.MAP_OUT || [], IN = window.MAP_IN || [];
-    var stage = $('#mapStage'), inner = $('#mapInner'), canvas = $('#mapCanvas'), pinsEl = $('#mapPins'), tip = $('#mapTip');
+    var LAND = window.GLOBE_LAND, PLACES = window.GLOBE_PLACES || [], HUB = window.MAP_HUB;
+    var wrapEl = $('#globe');
+    if (!LAND || !wrapEl || !HUB) return { relabel: function () {}, init: function () {} };
+    var stage = $('#globeStage'), canvas = $('#globeCanvas'), pinsEl = $('#globePins'), tip = $('#mapTip');
     var ctx = canvas.getContext('2d');
-    var mode = 'out', playing = !reduce, auto = !reduce, visible = true, raf = 0;
-    var t0 = performance.now(), switchAt = t0, lastSwitch = t0, activeId = null;
-    var cw = 0, ch = 0, dpr = 1, base = null;
-    var miller = function (la) { return 1.25 * Math.log(Math.tan(Math.PI / 4 + 0.4 * la * Math.PI / 180)); };
-    var yT = miller(W.latTop), yB = miller(W.latBot);
-    var aspect = W.cols / W.rows;
-    function proj(lon, lat) {
-      var x = ((((lon - W.lon0) % 360) + 360) % 360) / 360;
-      return [x, (yT - miller(lat)) / (yT - yB)];
-    }
-    var H = proj(HUB.lon, HUB.lat);
+    var RAD = Math.PI / 180, TAU = Math.PI * 2;
+    var LX = -0.34, LY = 0.42, LZ = 0.84;
+    (function () { var m = Math.sqrt(LX * LX + LY * LY + LZ * LZ); LX /= m; LY /= m; LZ /= m; })();
+    function ll(lon, lat) { return { x: Math.cos(lat * RAD) * Math.sin(lon * RAD), y: Math.sin(lat * RAD), z: Math.cos(lat * RAD) * Math.cos(lon * RAD) }; }
+    function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
+
     var dots = [];
-    W.segs.forEach(function (segs, r) {
-      segs.forEach(function (s) {
-        for (var c = s[0]; c < s[0] + s[1]; c++) {
-          var x = (c + 0.5) / W.cols, y = (r + 0.5) / W.rows;
-          dots.push([x, y, Math.hypot((x - H[0]) * aspect, y - H[1])]);
+    LAND.forEach(function (row) {
+      var step = 360 / row[1];
+      row[2].forEach(function (seg) {
+        for (var i = seg[0]; i < seg[0] + seg[1]; i++) {
+          var v = ll(-180 + (i + 0.5) * step, row[0]);
+          v.j = (dots.length * 0.618034) % 1;
+          dots.push(v);
         }
       });
     });
-    var maxD = dots.reduce(function (m, d) { return Math.max(m, d[2]); }, 0);
-    function ctrlPoint(a, b) {
-      var dist = Math.hypot((b[0] - a[0]) * aspect, b[1] - a[1]);
-      return [(a[0] + b[0]) / 2, Math.max(0.02, (a[1] + b[1]) / 2 - dist * 0.32)];
+    var ocean = [];
+    for (var la = -66; la <= 80; la += 5.5) {
+      var cn = Math.max(6, Math.round(360 * Math.cos(la * RAD) / 5.5));
+      for (var oi = 0; oi < cn; oi++) ocean.push(ll(-180 + (oi + 0.5) * 360 / cn, la));
     }
-    function mkRoute(id, a, b) { return { id: id, a: a, b: b, c: ctrlPoint(a, b) }; }
-    var routes = {
-      out: OUT.map(function (p) { return mkRoute(p.id, H, proj(p.lon, p.lat)); }),
-      in: IN.reduce(function (acc, p) {
-        (p.from || [[p.lon, p.lat]]).forEach(function (f) { acc.push(mkRoute(p.id, proj(f[0], f[1]), H)); });
-        return acc;
-      }, [])
-    };
-    function bez(r, t) {
-      var u = 1 - t;
-      return [u * u * r.a[0] + 2 * u * t * r.c[0] + t * t * r.b[0], u * u * r.a[1] + 2 * u * t * r.c[1] + t * t * r.b[1]];
+    var SEOUL = ll(HUB.lon, HUB.lat);
+    function slerp(a, b, t) {
+      var d = clamp(a.x * b.x + a.y * b.y + a.z * b.z, -1, 1), th = Math.acos(d), sn = Math.sin(th);
+      if (sn < 1e-5) return { x: a.x, y: a.y, z: a.z };
+      var w1 = Math.sin((1 - t) * th) / sn, w2 = Math.sin(t * th) / sn;
+      return { x: a.x * w1 + b.x * w2, y: a.y * w1 + b.y * w2, z: a.z * w1 + b.z * w2 };
     }
+    function arcPts(a, b) {
+      var ang = Math.acos(clamp(a.x * b.x + a.y * b.y + a.z * b.z, -1, 1));
+      var lift = 0.05 + 0.2 * ang / Math.PI, pts = [];
+      for (var i = 0; i <= 64; i++) {
+        var t = i / 64, q = slerp(a, b, t), l = 1 + Math.sin(t * Math.PI) * lift;
+        pts.push({ x: q.x * l, y: q.y * l, z: q.z * l });
+      }
+      return pts;
+    }
+    var routes = [];
+    PLACES.forEach(function (p, idx) {
+      p.v = ll(p.lon, p.lat);
+      p.out = !!(p.camps && p.camps.length);
+      p.inn = !!(p.langs && p.langs.length);
+      routes.push({ id: p.id, pts: arcPts(SEOUL, p.v), out: p.out, inn: p.inn, off: idx * 0.137, sp: 0.16 + (idx % 4) * 0.018 });
+      (p.from || []).forEach(function (f, k) {
+        routes.push({ id: p.id, pts: arcPts(SEOUL, ll(f[0], f[1])), out: false, inn: true, off: idx * 0.137 + k * 0.21, sp: 0.15 + k * 0.02 });
+      });
+    });
 
+    var size = 0, dpr = 1, raf = 0, visible = true, playing = !reduce, hold = false;
+    var yaw = -142 * RAD, tilt = 24 * RAD, yawV = 0, tiltV = 0, hovX = 0, hovY = 0, hovTX = 0, hovTY = 0;
+    var dragging = false, lastX = 0, lastY = 0, downX = 0, downY = 0, downT = 0, lastInput = -1e9;
+    var activeId = null, ripples = [], pins = [], hubEl = null;
+    var tPrev = performance.now(), clock = 0;
+    var ct = Math.cos(tilt), st = Math.sin(tilt), cyw = Math.cos(yaw), syw = Math.sin(yaw);
+    var R = 1, CX = 0, CY = 0;
+
+    function proj(p) {
+      var x = p.x * cyw + p.z * syw, z = -p.x * syw + p.z * cyw, y = p.y;
+      var y2 = y * ct - z * st, z2 = y * st + z * ct;
+      return { sx: CX + x * R, sy: CY - y2 * R, x: x, y: y2, z: z2 };
+    }
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
-      cw = inner.clientWidth; ch = inner.clientHeight;
-      if (!cw || !ch) return;
-      canvas.width = Math.round(cw * dpr); canvas.height = Math.round(ch * dpr);
-      base = doc.createElement('canvas');
-      base.width = canvas.width; base.height = canvas.height;
-      var b = base.getContext('2d');
-      var r = Math.max(0.9, (cw / W.cols) * 0.27) * dpr;
-      b.fillStyle = 'rgba(21,21,21,0.30)';
-      b.beginPath();
-      dots.forEach(function (d) { var x = d[0] * canvas.width, y = d[1] * canvas.height; b.moveTo(x + r, y); b.arc(x, y, r, 0, 6.2832); });
-      b.fill();
-      drawFrame(performance.now());
+      size = stage.clientWidth;
+      if (!size) return;
+      canvas.width = Math.round(size * dpr); canvas.height = Math.round(size * dpr);
+      R = size * 0.4; CX = size / 2; CY = size * 0.475;
+      draw();
     }
 
-    function drawFrame(now) {
-      if (!base) return;
-      var w = canvas.width, h = canvas.height;
-      var time = (now - t0) / 1000;
-      ctx.clearRect(0, 0, w, h);
-      ctx.drawImage(base, 0, 0);
-      var r = Math.max(0.9, (cw / W.cols) * 0.27) * dpr;
+    function draw() {
+      if (!size) return;
+      var tiltNow = clamp(tilt + hovY, 0, 0.9), yawNow = yaw + hovX;
+      ct = Math.cos(tiltNow); st = Math.sin(tiltNow); cyw = Math.cos(yawNow); syw = Math.sin(yawNow);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, size, size);
+      var i, p, a, s, g;
 
-      if (playing) {
-        var period = 4.6, phase = (time % period) / period;
-        var waveR = (mode === 'out' ? phase : 1 - phase) * maxD * 1.08;
-        var bw = 0.055;
-        var levels = [[], [], []];
-        for (var i = 0; i < dots.length; i++) {
-          var k = Math.abs(dots[i][2] - waveR);
-          if (k > bw * 2.4) continue;
-          var a = Math.exp(-(k * k) / (bw * bw));
-          levels[a > 0.66 ? 2 : a > 0.33 ? 1 : 0].push(dots[i]);
-        }
-        ['rgba(21,21,21,0.42)', 'rgba(21,21,21,0.62)', 'rgba(21,21,21,0.85)'].forEach(function (col, li) {
-          if (!levels[li].length) return;
-          ctx.fillStyle = col;
-          ctx.beginPath();
-          levels[li].forEach(function (d) { var x = d[0] * w, y = d[1] * h; ctx.moveTo(x + r * 1.15, y); ctx.arc(x, y, r * 1.15, 0, 6.2832); });
-          ctx.fill();
-        });
-      }
+      /* ground shadow */
+      g = ctx.createRadialGradient(CX, CY + R * 1.1, 0, CX, CY + R * 1.1, R * 0.9);
+      g.addColorStop(0, 'rgba(21,21,21,0.26)'); g.addColorStop(1, 'rgba(21,21,21,0)');
+      ctx.fillStyle = g;
+      ctx.save(); ctx.translate(CX, CY + R * 1.1); ctx.scale(1, 0.16); ctx.translate(-CX, -(CY + R * 1.1));
+      ctx.beginPath(); ctx.arc(CX, CY + R * 1.1, R * 0.9, 0, TAU); ctx.fill(); ctx.restore();
 
-      var rs = routes[mode];
-      var sinceSwitch = (now - switchAt) / 1000;
-      rs.forEach(function (rt, idx) {
-        var prog = reduce ? 1 : Math.min(1, Math.max(0, (sinceSwitch - idx * 0.05) / 1.1));
-        prog = 1 - Math.pow(1 - prog, 3);
-        var hl = activeId && rt.id === activeId;
-        ctx.lineWidth = (hl ? 2.4 : 1.25) * dpr;
-        ctx.strokeStyle = hl ? 'rgba(21,21,21,1)' : (activeId ? 'rgba(21,21,21,0.18)' : 'rgba(21,21,21,0.5)');
-        ctx.beginPath();
-        var steps = 48;
-        for (var s = 0; s <= steps * prog; s++) {
-          var p = bez(rt, s / steps);
-          if (s === 0) ctx.moveTo(p[0] * w, p[1] * h); else ctx.lineTo(p[0] * w, p[1] * h);
+      /* halo */
+      g = ctx.createRadialGradient(CX, CY, R * 0.96, CX, CY, R * 1.16);
+      g.addColorStop(0, 'rgba(255,248,214,0.55)'); g.addColorStop(1, 'rgba(255,248,214,0)');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(CX, CY, R * 1.16, 0, TAU); ctx.fill();
+
+      /* sphere body, lit from the upper left */
+      g = ctx.createRadialGradient(CX + LX * R * 0.5, CY - LY * R * 0.5, R * 0.08, CX, CY, R);
+      g.addColorStop(0, '#45413A'); g.addColorStop(0.55, '#242320'); g.addColorStop(1, '#101010');
+      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(CX, CY, R, 0, TAU); ctx.fill();
+
+      /* graticule */
+      ctx.strokeStyle = 'rgba(246,243,234,0.06)'; ctx.lineWidth = 1;
+      for (var gl = -60; gl <= 60; gl += 30) {
+        ctx.beginPath(); var on = false;
+        for (var lo = -180; lo <= 180; lo += 5) {
+          p = proj(ll(lo, gl));
+          if (p.z > 0) { if (!on) { ctx.moveTo(p.sx, p.sy); on = true; } else ctx.lineTo(p.sx, p.sy); } else on = false;
         }
         ctx.stroke();
-        if (mode === 'in') {
-          ctx.fillStyle = '#151515';
-          ctx.beginPath(); ctx.arc(rt.a[0] * w, rt.a[1] * h, 3 * dpr, 0, 6.2832); ctx.fill();
+      }
+
+      /* ocean texture */
+      for (i = 0; i < ocean.length; i++) {
+        p = proj(ocean[i]);
+        if (p.z <= 0.03) continue;
+        a = 0.03 + 0.08 * Math.max(0, p.x * LX + p.y * LY + p.z * LZ);
+        ctx.fillStyle = 'rgba(246,243,234,' + a.toFixed(3) + ')';
+        ctx.fillRect(p.sx - 0.6, p.sy - 0.6, 1.2, 1.2);
+      }
+
+      /* land dots: Lambert light + twinkle */
+      for (i = 0; i < dots.length; i++) {
+        var d = dots[i];
+        p = proj(d);
+        if (p.z <= 0.03) continue;
+        var lam = Math.max(0, p.x * LX + p.y * LY + p.z * LZ);
+        var tw = playing ? 0.86 + 0.28 * Math.sin(clock * 1.6 + d.j * TAU) : 1;
+        a = (0.42 + 0.58 * lam) * tw;
+        s = (1.4 + 1.3 * lam + 0.6 * p.z) * (size / 560);
+        ctx.fillStyle = (d.j < 0.24 ? 'rgba(255,216,77,' : 'rgba(242,194,48,') + a.toFixed(3) + ')';
+        ctx.fillRect(p.sx - s / 2, p.sy - s / 2, s, s);
+      }
+
+      /* specular */
+      ctx.save(); ctx.beginPath(); ctx.arc(CX, CY, R, 0, TAU); ctx.clip();
+      g = ctx.createRadialGradient(CX + LX * R * 0.6, CY - LY * R * 0.6, 0, CX + LX * R * 0.6, CY - LY * R * 0.6, R * 0.55);
+      g.addColorStop(0, 'rgba(255,248,214,0.12)'); g.addColorStop(1, 'rgba(255,248,214,0)');
+      ctx.fillStyle = g; ctx.fillRect(CX - R, CY - R, R * 2, R * 2);
+      ctx.restore();
+
+      /* routes: yellow = Korea → World, white = World → Korea; both run at once */
+      routes.forEach(function (rt) {
+        var hl = activeId === rt.id, dim = activeId && !hl;
+        ctx.beginPath(); var on = false;
+        for (var k = 0; k < rt.pts.length; k++) {
+          p = proj(rt.pts[k]);
+          if (p.z > 0.02) { if (!on) { ctx.moveTo(p.sx, p.sy); on = true; } else ctx.lineTo(p.sx, p.sy); } else on = false;
         }
-        if (playing && prog >= 1) {
-          for (var j = 0; j < 2; j++) {
-            var tt = (time * 0.24 + idx * 0.173 + j * 0.5) % 1;
-            for (var q = 5; q >= 0; q--) {
-              var tq = tt - q * 0.014;
-              if (tq < 0) continue;
-              var pp = bez(rt, tq);
-              ctx.fillStyle = 'rgba(21,21,21,' + (q === 0 ? 1 : 0.5 - q * 0.08) + ')';
-              ctx.beginPath(); ctx.arc(pp[0] * w, pp[1] * h, (q === 0 ? 3.2 : 2.2) * dpr, 0, 6.2832); ctx.fill();
-            }
-            if (tt > 0.9) {
-              var ring = (tt - 0.9) / 0.1;
-              ctx.strokeStyle = 'rgba(21,21,21,' + (1 - ring) * 0.7 + ')';
-              ctx.lineWidth = 1.4 * dpr;
-              ctx.beginPath(); ctx.arc(rt.b[0] * w, rt.b[1] * h, (4 + ring * 14) * dpr, 0, 6.2832); ctx.stroke();
-            }
-          }
-        }
+        var col = rt.out ? '255,216,77' : '246,243,234';
+        ctx.strokeStyle = 'rgba(' + col + ',' + (hl ? 1 : dim ? 0.14 : 0.5) + ')';
+        ctx.lineWidth = hl ? 2.2 : 1.1;
+        ctx.stroke();
+        if (!playing) return;
+        if (rt.out) pulse(rt, (clock * rt.sp + rt.off) % 1, false, '255,216,77', dim);
+        if (rt.inn) pulse(rt, (clock * rt.sp + rt.off + 0.5) % 1, true, '255,255,255', dim);
       });
+
+      /* Seoul */
+      p = proj(SEOUL);
+      if (p.z > 0) {
+        var ph = playing ? (clock * 0.8) % 1 : 0.3;
+        ctx.strokeStyle = 'rgba(255,216,77,' + ((1 - ph) * 0.9).toFixed(3) + ')'; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.arc(p.sx, p.sy, 4 + ph * 18, 0, TAU); ctx.stroke();
+        ctx.fillStyle = '#FFD84D'; ctx.beginPath(); ctx.arc(p.sx, p.sy, 4.5, 0, TAU); ctx.fill();
+        ctx.strokeStyle = '#151515'; ctx.lineWidth = 1.5; ctx.stroke();
+      }
+
+      /* click ripples */
+      for (i = ripples.length - 1; i >= 0; i--) {
+        var rp = ripples[i];
+        p = proj(rp.v);
+        if (p.z <= 0 || rp.t >= 1) continue;
+        ctx.strokeStyle = 'rgba(255,216,77,' + ((1 - rp.t) * 0.9).toFixed(3) + ')'; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.arc(p.sx, p.sy, 3 + rp.t * 30, 0, TAU); ctx.stroke();
+      }
+
+      placePins();
+    }
+    function pulse(rt, t, reverse, col, dim) {
+      var n = rt.pts.length - 1;
+      for (var q = 6; q >= 0; q--) {
+        var tq = t - q * 0.012;
+        if (tq < 0) continue;
+        var p = proj(rt.pts[Math.round((reverse ? 1 - tq : tq) * n)]);
+        if (p.z <= 0.02) continue;
+        ctx.fillStyle = 'rgba(' + col + ',' + ((q === 0 ? 1 : 0.55 - q * 0.07) * (dim ? 0.3 : 1)).toFixed(3) + ')';
+        ctx.beginPath(); ctx.arc(p.sx, p.sy, q === 0 ? 2.8 : 1.9, 0, TAU); ctx.fill();
+      }
+      if (t > 0.9 && !dim) {
+        var end = proj(rt.pts[reverse ? 0 : n]);
+        if (end.z > 0.02) {
+          var r = (t - 0.9) / 0.1;
+          ctx.strokeStyle = 'rgba(' + col + ',' + ((1 - r) * 0.8).toFixed(3) + ')'; ctx.lineWidth = 1.3;
+          ctx.beginPath(); ctx.arc(end.sx, end.sy, 3 + r * 13, 0, TAU); ctx.stroke();
+        }
+      }
     }
 
-    function loop(now) {
-      raf = 0;
-      if (auto && playing && visible && now - lastSwitch > 8000) { setMode(mode === 'out' ? 'in' : 'out', false); }
-      drawFrame(now);
-      if (playing && visible && !doc.hidden) raf = requestAnimationFrame(loop);
-    }
-    function kick() { if (!raf && playing && visible && !doc.hidden) raf = requestAnimationFrame(loop); }
-
-    function pinHTML(kind, p) {
-      var xy = proj(p.lon, p.lat);
-      var name = t('place.' + p.id);
-      var aria = kind === 'out' ? name + ' · ' + t('map.campsN', { n: p.camps.length }) : name + ' · ' + p.langs.map(langName).join(', ');
-      return '<button class="pin pin--' + kind + ' pin--' + (p.side || 'r') + '" type="button" data-pin="' + kind + ':' + p.id + '" style="left:' + (xy[0] * 100).toFixed(3) + '%;top:' + (xy[1] * 100).toFixed(3) + '%" aria-label="' + esc(aria) + '">' +
-        '<span class="pin__dot" aria-hidden="true"></span><span class="pin__label">' + esc(name) + '</span></button>';
-    }
     function langName(code) { for (var i = 0; i < LANGS.length; i++) if (LANGS[i][0] === code) return LANGS[i][1]; return code; }
     function renderPins() {
-      pinsEl.innerHTML = OUT.map(function (p) { return pinHTML('out', p); }).join('') + IN.map(function (p) { return pinHTML('in', p); }).join('') +
-        '<div class="hub" style="left:' + (H[0] * 100).toFixed(3) + '%;top:' + (H[1] * 100).toFixed(3) + '%" aria-hidden="true"><span class="hub__ring"></span><span class="hub__ring"></span><span class="hub__dot"></span><span class="hub__label">' + esc(t('map.seoul')) + '</span></div>';
+      pinsEl.innerHTML = PLACES.map(function (p) {
+        var kind = p.out && p.inn ? 'both' : p.out ? 'out' : 'in';
+        var name = t('place.' + p.id);
+        var aria = name + (p.out ? ' · ' + t('map.campsN', { n: p.camps.length }) : '') + (p.inn ? ' · ' + p.langs.map(langName).join(', ') : '');
+        return '<button class="gpin gpin--' + kind + ' gpin--' + (p.side || 'r') + '" type="button" data-gpin="' + p.id + '" aria-label="' + esc(aria) + '">' +
+          '<span class="gpin__dot" aria-hidden="true"></span><span class="gpin__label">' + esc(name) + '</span></button>';
+      }).join('') + '<div class="ghub" aria-hidden="true"><span class="ghub__label">' + esc(t('map.seoul')) + '</span></div>';
+      pins = $$('.gpin', pinsEl).map(function (el) {
+        var id = el.getAttribute('data-gpin');
+        return { el: el, p: PLACES.filter(function (x) { return x.id === id; })[0] };
+      });
+      hubEl = $('.ghub', pinsEl);
+    }
+    function placePins() {
+      pins.forEach(function (o) {
+        var q = proj(o.p.v);
+        var back = q.z < 0.12;
+        o.el.classList.toggle('is-back', back);
+        if (back) return;
+        o.el.style.opacity = clamp((q.z - 0.12) / 0.25, 0, 1).toFixed(2);
+        o.el.style.transform = 'translate(' + q.sx.toFixed(1) + 'px,' + q.sy.toFixed(1) + 'px) ' +
+          (o.p.side === 'l' ? 'translate(calc(-100% + 4.5px),-50%)' : 'translate(-4.5px,-50%)');
+      });
+      if (hubEl) {
+        var h = proj(SEOUL);
+        hubEl.style.opacity = h.z > 0.1 ? '1' : '0';
+        hubEl.style.transform = 'translate(' + h.sx.toFixed(1) + 'px,' + h.sy.toFixed(1) + 'px)';
+      }
+    }
+
+    function frame(now) {
+      raf = 0;
+      var dt = Math.min(0.05, (now - tPrev) / 1000);
+      tPrev = now;
+      if (playing) clock += dt;
+      if (!dragging) {
+        yaw += yawV; yawV *= 0.94;
+        tilt = clamp(tilt + tiltV, 0, 0.75); tiltV *= 0.9;
+        if (playing && !hold) {
+          var sz = proj(SEOUL).z;
+          var idle = now - lastInput > 2600 ? 1 : 0;
+          /* turn slowly while Korea faces the viewer, faster while it is on the far side */
+          yaw += dt * (0.065 + 0.3 * (1 - clamp(sz, 0, 1))) * idle;
+          tilt += (24 * RAD - tilt) * 0.01 * idle;
+        }
+      }
+      hovX += (hovTX - hovX) * 0.06;
+      hovY += (hovTY - hovY) * 0.06;
+      ripples.forEach(function (r) { r.t += dt * 1.3; });
+      ripples = ripples.filter(function (r) { return r.t < 1; });
+      draw();
+      if (visible && !doc.hidden && (playing || dragging || Math.abs(yawV) > 1e-4 || Math.abs(hovX - hovTX) > 1e-4 || ripples.length)) raf = requestAnimationFrame(frame);
+    }
+    function kick() { if (!raf && visible && !doc.hidden) { tPrev = performance.now(); raf = requestAnimationFrame(frame); } }
+
+    function closeTip() {
+      tip.hidden = true;
+      hold = false;
+      pins.forEach(function (o) { o.el.classList.remove('is-active'); });
+      activeId = null;
+      kick();
+    }
+    function openTip(el) {
+      var p = PLACES.filter(function (x) { return x.id === el.getAttribute('data-gpin'); })[0];
+      if (!p) return;
+      pins.forEach(function (o) { o.el.classList.toggle('is-active', o.el === el); });
+      activeId = p.id;
+      hold = true;
+      var html = '<button class="iconbtn maptip__x" type="button" data-tip-close aria-label="' + esc(t('nav.close')) + '">' + ICON_X_SM + '</button>' +
+        '<p class="maptip__t">' + esc(t('place.' + p.id)) + '</p>';
+      if (p.out) {
+        html += '<p class="maptip__s">' + esc(t('map.out')) + ' · ' + esc(t('map.campsN', { n: p.camps.length })) + '</p><div class="maptip__list">' +
+          p.camps.map(function (cid) { return '<button type="button" data-detail="' + cid + '">' + esc(ct(cid, 't')) + '</button>'; }).join('') + '</div>';
+      }
+      if (p.inn) {
+        html += '<p class="maptip__s">' + esc(t('map.in')) + ' · ' + esc(t('map.langs')) + '</p><div class="maptip__langs">' +
+          p.langs.map(function (code) { return '<button type="button" data-lang="' + code + '" lang="' + code + '">' + esc(langName(code)) + '</button>'; }).join('') + '</div>';
+      }
+      html += p.out ? '<button class="btn btn--ink btn--sm" type="button" data-map-region="' + p.region + '">' + esc(t('map.viewRegion')) + '</button>'
+        : '<a class="btn btn--ink btn--sm" href="#korea" data-tip-close>' + esc(t('map.koreaCamps')) + '</a>';
+      tip.innerHTML = html;
+      tip.hidden = false;
+      draw();
+      var sr = stage.getBoundingClientRect(), dr = el.querySelector('.gpin__dot').getBoundingClientRect();
+      var px = dr.left + dr.width / 2 - sr.left, py = dr.top + dr.height / 2 - sr.top;
+      var tw = tip.offsetWidth, th = tip.offsetHeight;
+      var left = px + 16;
+      if (left + tw > sr.width - 4) left = px - tw - 16;
+      left = clamp(left, 4, Math.max(4, sr.width - tw - 4));
+      tip.style.left = left + 'px';
+      tip.style.top = clamp(py - th / 2, 4, Math.max(4, sr.height - th - 4)) + 'px';
     }
     function relabel() {
       renderPins();
-      $('#mapNote').textContent = mode === 'out' ? t('map.outNote', { n: OUT.length }) : t('map.inNote', { n: LANGS.length });
-      $('#mapHint').textContent = t(mode === 'out' ? 'map.hintOut' : 'map.hintIn') +
-        (stage.scrollWidth > stage.clientWidth + 2 ? ' ' + t('map.drag') : '');
-      var play = $('#mapPlay');
-      play.setAttribute('aria-label', t(playing ? 'map.pause' : 'map.play'));
-      closeTip();
+      var outN = PLACES.filter(function (p) { return p.out; }).length;
+      $('#legendOut').textContent = t('map.outNote', { n: outN });
+      $('#legendIn').textContent = t('map.inNote', { n: LANGS.length });
+      $('#mapHint').textContent = t('map.dragGlobe') + ' ' + t('map.hintOut');
+      $('#mapPlay').setAttribute('aria-label', t(playing ? 'map.pause' : 'map.play'));
+      if (!tip.hidden) closeTip();
+      draw();
     }
-    function setMode(m, byUser) {
-      if (byUser) auto = false;
-      if (m === mode && !byUser) return;
-      mode = m;
-      mapRoot.setAttribute('data-mode', m);
-      $$('.dirswitch__btn', mapRoot).forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-dir') === m)); });
-      switchAt = lastSwitch = performance.now();
-      activeId = null;
-      relabel();
-      if (!playing) drawFrame(performance.now());
-    }
-    function closeTip() {
-      tip.hidden = true;
-      $$('.pin.is-active', pinsEl).forEach(function (p) { p.classList.remove('is-active'); });
-      activeId = null;
-      if (!playing) drawFrame(performance.now());
-    }
-    function openTip(pinEl) {
-      var parts = pinEl.getAttribute('data-pin').split(':');
-      var kind = parts[0], id = parts[1];
-      var p = (kind === 'out' ? OUT : IN).filter(function (x) { return x.id === id; })[0];
-      if (!p) return;
-      $$('.pin.is-active', pinsEl).forEach(function (x) { x.classList.remove('is-active'); });
-      pinEl.classList.add('is-active');
-      activeId = id;
-      var html = '<button class="iconbtn maptip__x" type="button" data-tip-close aria-label="' + esc(t('nav.close')) + '">' + ICON_X_SM + '</button>' +
-        '<p class="maptip__t">' + esc(t('place.' + id)) + '</p>';
-      if (kind === 'out') {
-        html += '<p class="maptip__s">' + esc(t('map.campsN', { n: p.camps.length })) + '</p><div class="maptip__list">' +
-          p.camps.map(function (cid) { return '<button type="button" data-detail="' + cid + '">' + esc(ct(cid, 't')) + '</button>'; }).join('') +
-          '</div><button class="btn btn--ink btn--sm" type="button" data-map-region="' + p.region + '">' + esc(t('map.viewRegion')) + '</button>';
-      } else {
-        html += '<p class="maptip__s">' + esc(t('map.langs')) + '</p><div class="maptip__langs">' +
-          p.langs.map(function (code) { return '<button type="button" data-lang="' + code + '" lang="' + code + '">' + esc(langName(code)) + '</button>'; }).join('') +
-          '</div><a class="btn btn--ink btn--sm" href="#korea" data-tip-close>' + esc(t('map.koreaCamps')) + '</a>';
-      }
-      tip.innerHTML = html;
-      tip.hidden = false;
-      var ir = inner.getBoundingClientRect(), pr = pinEl.querySelector('.pin__dot').getBoundingClientRect();
-      var px = pr.left + pr.width / 2 - ir.left, py = pr.top + pr.height / 2 - ir.top;
-      var tw = tip.offsetWidth, th = tip.offsetHeight;
-      var left = px + 18;
-      if (left + tw > ir.width - 8) left = px - tw - 18;
-      left = Math.max(8, left);
-      var top = Math.min(Math.max(8, py - th / 2), Math.max(8, ir.height - th - 8));
-      tip.style.left = left + 'px';
-      tip.style.top = top + 'px';
-      if (!playing) drawFrame(performance.now());
-    }
-    function centreOnSeoul() {
-      if (stage.scrollWidth > stage.clientWidth + 2) stage.scrollLeft = H[0] * inner.clientWidth - stage.clientWidth / 2;
+    function spawnRipple(clientX, clientY) {
+      var r = stage.getBoundingClientRect();
+      var x = (clientX - r.left - CX) / R, yy = -(clientY - r.top - CY) / R;
+      var rr = x * x + yy * yy;
+      if (rr > 1) return;
+      var z2 = Math.sqrt(1 - rr);
+      var y = yy * ct + z2 * st, z = -yy * st + z2 * ct;
+      ripples.push({ v: { x: x * cyw - z * syw, y: y, z: x * syw + z * cyw }, t: 0 });
+      if (ripples.length > 6) ripples.shift();
+      kick();
     }
 
     function init() {
-      renderPins();
       relabel();
-      $$('.dirswitch__btn', mapRoot).forEach(function (b) {
-        b.addEventListener('click', function () { setMode(b.getAttribute('data-dir'), true); kick(); });
+      stage.addEventListener('pointerdown', function (e) {
+        if (e.target.closest('.gpin') || e.target.closest('#mapTip')) return;
+        dragging = true; lastX = downX = e.clientX; lastY = downY = e.clientY; downT = performance.now();
+        yawV = 0; tiltV = 0; lastInput = performance.now();
+        stage.classList.add('is-dragging');
+        try { stage.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+        if (!tip.hidden) closeTip();
+        kick();
       });
+      stage.addEventListener('pointermove', function (e) {
+        if (!dragging && window.matchMedia('(hover: hover)').matches) {
+          var r = stage.getBoundingClientRect();
+          hovTX = ((e.clientX - r.left) / r.width - 0.5) * 0.18;
+          hovTY = ((e.clientY - r.top) / r.height - 0.5) * 0.12;
+          kick();
+        }
+        if (!dragging) return;
+        var dx = e.clientX - lastX, dy = e.clientY - lastY;
+        lastX = e.clientX; lastY = e.clientY;
+        yaw += dx * 0.006; yawV = dx * 0.006;
+        tilt = clamp(tilt + dy * 0.004, 0, 0.75); tiltV = dy * 0.004;
+        lastInput = performance.now();
+      });
+      function endDrag(e) {
+        if (!dragging) return;
+        dragging = false;
+        stage.classList.remove('is-dragging');
+        lastInput = performance.now();
+        if (Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY) < 6 && performance.now() - downT < 400) spawnRipple(e.clientX, e.clientY);
+        kick();
+      }
+      stage.addEventListener('pointerup', endDrag);
+      stage.addEventListener('pointercancel', endDrag);
+      stage.addEventListener('pointerleave', function () { hovTX = 0; hovTY = 0; kick(); });
+      pinsEl.addEventListener('click', function (e) {
+        var el = e.target.closest('.gpin');
+        if (!el) return;
+        if (el.classList.contains('is-active') && !tip.hidden) closeTip(); else openTip(el);
+      });
+      pinsEl.addEventListener('pointerover', function (e) {
+        var el = e.target.closest('.gpin');
+        if (el && tip.hidden) { activeId = el.getAttribute('data-gpin'); if (!playing) draw(); }
+      });
+      pinsEl.addEventListener('pointerout', function (e) {
+        var el = e.target.closest('.gpin');
+        if (el && tip.hidden) { activeId = null; if (!playing) draw(); }
+      });
+      tip.addEventListener('click', function (e) { if (e.target.closest('[data-tip-close]')) closeTip(); });
+      doc.addEventListener('click', function (e) {
+        if (!tip.hidden && !e.target.closest('#mapTip') && !e.target.closest('.gpin')) closeTip();
+      });
+      doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !tip.hidden) closeTip(); });
       $('#mapPlay').addEventListener('click', function (e) {
         playing = !playing;
         e.currentTarget.setAttribute('aria-pressed', String(!playing));
         e.currentTarget.setAttribute('aria-label', t(playing ? 'map.pause' : 'map.play'));
-        if (playing) { t0 = performance.now() - 1000; kick(); } else drawFrame(performance.now());
+        draw(); kick();
       });
-      pinsEl.addEventListener('click', function (e) {
-        var pin = e.target.closest('.pin');
-        if (!pin) return;
-        if (pin.classList.contains('is-active') && !tip.hidden) closeTip(); else openTip(pin);
-      });
-      pinsEl.addEventListener('pointerover', function (e) {
-        var pin = e.target.closest('.pin');
-        if (pin && tip.hidden) { activeId = pin.getAttribute('data-pin').split(':')[1]; if (!playing) drawFrame(performance.now()); }
-      });
-      pinsEl.addEventListener('pointerout', function (e) {
-        var pin = e.target.closest('.pin');
-        if (pin && tip.hidden) { activeId = null; if (!playing) drawFrame(performance.now()); }
-      });
-      tip.addEventListener('click', function (e) { if (e.target.closest('[data-tip-close]')) closeTip(); });
-      doc.addEventListener('click', function (e) {
-        if (!tip.hidden && !e.target.closest('#mapTip') && !e.target.closest('.pin')) closeTip();
-      });
-      doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !tip.hidden) closeTip(); });
-      if ('ResizeObserver' in window) new ResizeObserver(function () { resize(); }).observe(inner);
+      if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
       else window.addEventListener('resize', resize);
       if ('IntersectionObserver' in window) {
-        new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) kick(); }, { threshold: 0.05 }).observe(mapRoot);
+        new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) kick(); }, { threshold: 0.05 }).observe(stage);
       }
       doc.addEventListener('visibilitychange', kick);
       resize();
-      centreOnSeoul();
-      window.addEventListener('resize', centreOnSeoul, { passive: true });
       kick();
     }
     return { init: init, relabel: relabel };

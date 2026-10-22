@@ -936,6 +936,7 @@
   "map.koreaCamps": "查看韩国营地",
   "map.caption": "地图显示的是示例营地的目的地，以及本网站所支持语言的使用地区。",
   "map.drag": "左右滑动即可浏览地图。",
+  "map.dragGlobe": "拖动即可旋转地球仪。",
   "place.uk": "英国",
   "place.europe": "欧洲",
   "place.canada": "加拿大安大略省",

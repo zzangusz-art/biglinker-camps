@@ -43,31 +43,28 @@ window.QUICK = [
   { id: "stem",     set: { cat: ["stem"] } }
 ];
 
-/* World map. Seoul is the hub; lon/lat in degrees. side = label side (l / r). */
+/* Hero globe. Seoul is the hub. A place can send Korean students out (camps) and/or bring
+   international students in (langs = language regions served by this site). side = label side (l / r). */
 window.MAP_HUB = { lon: 126.98, lat: 37.57 };
-window.MAP_OUT = [
-  { id: "uk",        lon: -0.13,  lat: 51.5,  region: "uk",  camps: ["ukboarding", "ukmed", "uksummer", "aicode"], side: "l" },
-  { id: "europe",    lon: 10.5,   lat: 48.5,  region: "eu",  camps: ["lifesci"],            side: "r" },
-  { id: "canada",    lon: -79.4,  lat: 43.7,  region: "na",  camps: ["canada"],             side: "t" },
-  { id: "useast",    lon: -71.1,  lat: 42.4,  region: "na",  camps: ["usleader"],           side: "b" },
-  { id: "clark",     lon: 120.6,  lat: 15.2,  region: "sea", camps: ["clark"],              side: "l" },
-  { id: "cebu",      lon: 123.9,  lat: 10.3,  region: "sea", camps: ["cebu"],               side: "r" },
-  { id: "sg",        lon: 103.8,  lat: 1.35,  region: "sea", camps: ["sgstem", "johor"],    side: "l" },
-  { id: "goldcoast", lon: 153.4,  lat: -28.0, region: "oc",  camps: ["goldcoast"],          side: "r" },
-  { id: "auckland",  lon: 174.8,  lat: -36.85, region: "oc", camps: ["auckland"],           side: "r" },
-  { id: "jeju",      lon: 126.5,  lat: 33.4,  region: "kr",  camps: ["jeju"],               side: "l" }
-];
-window.MAP_IN = [
-  { id: "europe",       lon: 2.35,   lat: 48.86, langs: ["en", "fr", "de", "es", "it"], side: "l",
-    from: [[-0.13, 51.5], [2.35, 48.86], [13.4, 52.52], [-3.7, 40.42], [12.5, 41.9]] },
-  { id: "northamerica", lon: -74.0,  lat: 40.7,  langs: ["en"], side: "l" },
-  { id: "mexico",       lon: -99.13, lat: 19.43, langs: ["es"], side: "r" },
-  { id: "brazil",       lon: -46.63, lat: -23.55, langs: ["pt"], side: "r" },
-  { id: "japan",        lon: 139.69, lat: 35.69, langs: ["ja"], side: "r" },
-  { id: "china",        lon: 121.47, lat: 31.23, langs: ["zh"], side: "l" },
-  { id: "vietnam",      lon: 105.85, lat: 21.03, langs: ["vi"], side: "l" },
-  { id: "thailand",     lon: 100.5,  lat: 13.75, langs: ["th"], side: "l" },
-  { id: "indonesia",    lon: 106.85, lat: -6.2,  langs: ["id"], side: "l" }
+window.GLOBE_PLACES = [
+  { id: "uk",        lon: -0.13,  lat: 51.5,   camps: ["ukboarding", "ukmed", "uksummer", "aicode"], region: "uk", langs: ["en"], side: "l" },
+  { id: "europe",    lon: 9.5,    lat: 47.5,   camps: ["lifesci"], region: "eu", langs: ["fr", "de", "es", "it"], side: "r",
+    from: [[2.35, 48.86], [13.4, 52.52], [-3.7, 40.42], [12.5, 41.9]] },
+  { id: "canada",    lon: -79.4,  lat: 43.7,   camps: ["canada"], region: "na", side: "l" },
+  { id: "useast",    lon: -72.0,  lat: 41.6,   camps: ["usleader"], region: "na", langs: ["en"], side: "r" },
+  { id: "mexico",    lon: -99.13, lat: 19.43,  langs: ["es"], side: "l" },
+  { id: "brazil",    lon: -46.63, lat: -23.55, langs: ["pt"], side: "r" },
+  { id: "japan",     lon: 139.69, lat: 35.69,  langs: ["ja"], side: "r" },
+  { id: "china",     lon: 116.4,  lat: 39.9,   langs: ["zh"], side: "l" },
+  { id: "vietnam",   lon: 105.85, lat: 21.03,  langs: ["vi"], side: "l" },
+  { id: "thailand",  lon: 100.5,  lat: 13.75,  langs: ["th"], side: "l" },
+  { id: "indonesia", lon: 106.85, lat: -6.2,   langs: ["id"], side: "l" },
+  { id: "clark",     lon: 120.6,  lat: 15.2,   camps: ["clark"], region: "sea", side: "l" },
+  { id: "cebu",      lon: 123.9,  lat: 10.3,   camps: ["cebu"], region: "sea", side: "r" },
+  { id: "sg",        lon: 103.8,  lat: 1.35,   camps: ["sgstem", "johor"], region: "sea", side: "r" },
+  { id: "goldcoast", lon: 153.4,  lat: -28.0,  camps: ["goldcoast"], region: "oc", side: "l" },
+  { id: "auckland",  lon: 174.8,  lat: -36.85, camps: ["auckland"], region: "oc", side: "r" },
+  { id: "jeju",      lon: 126.5,  lat: 33.4,   camps: ["jeju"], region: "kr", side: "l" }
 ];
 
 window.ARTICLES = [

@@ -56,47 +56,39 @@
 
 <main id="main">
 
-  <!-- Hero: Korea ↔ World map -->
+  <!-- Hero: Korea ↔ World globe -->
   <section class="hero" aria-labelledby="heroTitle">
-    <div class="wrap hero__top">
+    <div class="wrap hero__grid">
       <div class="hero__copy">
         <p class="kicker" data-i18n="hero.eyebrow">BigLinker Camps · 서울</p>
         <h1 class="hero__title display" id="heroTitle" data-i18n-html="hero.title">한국과 세계를,<br>양방향으로.</h1>
         <p class="hero__deck" data-i18n="hero.deck">서울의 교육 컨설팅 회사 빅링커가 해외 캠프를 고르고, 준비시키고, 함께 출국합니다. 한국을 찾는 해외 학생에게는 서울에서의 2주를 설계합니다.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--ink btn--lg" href="#lab" data-start-diag><span data-i18n="hero.ctaDiag">해외 캠프 진단하기</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <a class="btn btn--line btn--lg" href="#korea"><span data-i18n="hero.ctaKorea">한국으로 오는 캠프</span></a>
+        </div>
+        <ul class="legend">
+          <li><span class="legend__sw legend__sw--out" aria-hidden="true"><i></i></span><span><b data-i18n="map.out">한국 → 세계</b><span class="legend__n" id="legendOut"></span></span></li>
+          <li><span class="legend__sw legend__sw--in" aria-hidden="true"><i></i></span><span><b data-i18n="map.in">세계 → 한국</b><span class="legend__n" id="legendIn"></span></span></li>
+        </ul>
       </div>
-      <div class="hero__ctas">
-        <a class="btn btn--ink btn--lg" href="#lab" data-start-diag><span data-i18n="hero.ctaDiag">해외 캠프 진단하기</span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-        <a class="btn btn--line btn--lg" href="#korea"><span data-i18n="hero.ctaKorea">한국으로 오는 캠프</span></a>
-      </div>
-    </div>
 
-    <div class="wrap">
-      <div class="worldmap" id="worldmap" data-mode="out">
-        <div class="worldmap__bar">
-          <div class="dirswitch" role="group" data-i18n-attr="aria-label:map.label" aria-label="한국과 캠프 목적지를 잇는 세계 지도">
-            <button class="dirswitch__btn" type="button" data-dir="out" aria-pressed="true" data-i18n="map.out">한국 → 세계</button>
-            <button class="dirswitch__btn" type="button" data-dir="in" aria-pressed="false" data-i18n="map.in">세계 → 한국</button>
-            <span class="dirswitch__thumb" aria-hidden="true"></span>
-          </div>
-          <p class="worldmap__note" id="mapNote" aria-live="polite"></p>
-          <button class="iconbtn worldmap__play" id="mapPlay" type="button" data-i18n-attr="aria-label:map.pause" aria-pressed="false" aria-label="움직임 멈추기">
-            <svg class="i-pause" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M7 4v12M13 4v12" stroke="currentColor" stroke-width="2"/></svg>
-            <svg class="i-play" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M6 4l10 6-10 6Z" fill="currentColor"/></svg>
+      <div class="globe" id="globe">
+        <div class="globe__stage" id="globeStage" role="img" data-i18n-attr="aria-label:map.label" aria-label="한국과 캠프 목적지를 잇는 세계 지도">
+          <canvas class="globe__canvas" id="globeCanvas" aria-hidden="true"></canvas>
+          <div class="globe__pins" id="globePins"></div>
+          <div class="maptip glass" id="mapTip" hidden></div>
+        </div>
+        <div class="globe__bar">
+          <p class="globe__hint" id="mapHint"></p>
+          <button class="iconbtn globe__play" id="mapPlay" type="button" data-i18n-attr="aria-label:map.pause" aria-pressed="false" aria-label="움직임 멈추기">
+            <svg class="i-pause" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M7 4v12M13 4v12" stroke="currentColor" stroke-width="2"/></svg>
+            <svg class="i-play" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M6 4l10 6-10 6Z" fill="currentColor"/></svg>
           </button>
         </div>
-        <div class="worldmap__stage" id="mapStage">
-          <div class="worldmap__inner" id="mapInner" role="img" data-i18n-attr="aria-label:map.label" aria-label="한국과 캠프 목적지를 잇는 세계 지도">
-            <canvas class="worldmap__canvas" id="mapCanvas" aria-hidden="true"></canvas>
-            <div class="worldmap__pins" id="mapPins"></div>
-            <div class="maptip glass" id="mapTip" hidden></div>
-          </div>
-        </div>
-        <div class="worldmap__foot">
-          <p class="worldmap__hint" id="mapHint"></p>
-          <p class="worldmap__cap" data-i18n="map.caption">지도는 캠프 예시의 목적지와 이 사이트가 지원하는 언어권을 나타냅니다.</p>
-        </div>
       </div>
     </div>
+    <div class="wrap"><p class="hero__cap" data-i18n="map.caption">지도는 캠프 예시의 목적지와 이 사이트가 지원하는 언어권을 나타냅니다.</p></div>
   </section>
 
   <!-- Camp Lab -->

@@ -936,6 +936,7 @@
   "map.koreaCamps": "See camps in Korea",
   "map.caption": "The map shows destinations of our example camps and the language regions this site supports.",
   "map.drag": "Swipe sideways to explore the map.",
+  "map.dragGlobe": "Drag the globe to turn it.",
   "place.uk": "United Kingdom",
   "place.europe": "Europe",
   "place.canada": "Ontario, Canada",

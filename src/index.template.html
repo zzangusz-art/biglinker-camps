@@ -8,10 +8,10 @@
 <meta property="og:title" content="BigLinker Camps">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/kpop-friends.jpg">
-<meta name="theme-color" content="#F3F1EC">
+<meta name="theme-color" content="#F2C230">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Noto+Serif+KR:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&family=Newsreader:ital,opsz,wght@0,6..72,600;1,6..72,400&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
   <filter id="lg-refract" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
     <feTurbulence type="fractalNoise" baseFrequency="0.011 0.017" numOctaves="2" seed="4" result="noise"/>
     <feGaussianBlur in="noise" stdDeviation="1.6" result="soft"/>
-    <feDisplacementMap in="SourceGraphic" in2="soft" scale="26" xChannelSelector="R" yChannelSelector="B"/>
+    <feDisplacementMap in="SourceGraphic" in2="soft" scale="22" xChannelSelector="R" yChannelSelector="B"/>
   </filter>
 </svg>
 
@@ -56,393 +56,455 @@
 
 <main id="main">
 
-  <!-- Cover -->
-  <section class="hero wrap" aria-labelledby="heroTitle">
-    <div class="hero__meta mono">
-      <span>BigLinker Camps</span>
-      <span data-i18n="hero.issue"></span>
-      <span data-i18n="hero.place"></span>
-    </div>
-    <h1 class="hero__title display" id="heroTitle" data-i18n-html="hero.title"></h1>
-    <div class="hero__grid">
+  <!-- Hero: Korea ↔ World map -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap hero__top">
       <div class="hero__copy">
-        <p class="deck" data-i18n="hero.deck"></p>
-        <div class="hero__entries">
-          <a class="entry" href="#lab">
-            <span class="entry__sub mono" data-i18n="hero.ctaParentsSub"></span>
-            <span class="entry__t" data-i18n="hero.ctaParents"></span>
-            <svg class="entry__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-          </a>
-          <a class="entry" href="#korea">
-            <span class="entry__sub mono" data-i18n="hero.ctaKoreaSub"></span>
-            <span class="entry__t" data-i18n="hero.ctaKorea"></span>
-            <svg class="entry__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
-          </a>
-        </div>
+        <p class="kicker" data-i18n="hero.eyebrow"></p>
+        <h1 class="hero__title display" id="heroTitle" data-i18n-html="hero.title"></h1>
+        <p class="hero__deck" data-i18n="hero.deck"></p>
       </div>
-      <figure class="hero__fig">
-        <div class="frame frame--3x2 is-loading">
-          <img src="assets/img/kpop-friends.jpg" width="1282" height="855" fetchpriority="high" data-i18n-attr="alt:hero.caption">
-          <span class="chip-glass glass" data-i18n="hero.badge"></span>
-        </div>
-        <figcaption class="cap"><span class="cap__no mono" data-fig="01"></span> <span data-i18n="hero.caption"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Contents -->
-  <nav class="toc wrap" aria-labelledby="tocTitle">
-    <h2 class="toc__title mono" id="tocTitle" data-i18n="toc.title"></h2>
-    <ol class="toc__list">
-      <li><a href="#lab"><span class="toc__no">01</span><span class="toc__t" data-i18n="toc.1"></span><span class="toc__d" data-i18n="toc.1d"></span></a></li>
-      <li><a href="#feature"><span class="toc__no">02</span><span class="toc__t" data-i18n="toc.2"></span><span class="toc__d" data-i18n="toc.2d"></span></a></li>
-      <li><a href="#korea"><span class="toc__no">03</span><span class="toc__t" data-i18n="toc.3"></span><span class="toc__d" data-i18n="toc.3d"></span></a></li>
-      <li><a href="#how"><span class="toc__no">04</span><span class="toc__t" data-i18n="toc.4"></span><span class="toc__d" data-i18n="toc.4d"></span></a></li>
-      <li><a href="#partners"><span class="toc__no">05</span><span class="toc__t" data-i18n="toc.5"></span><span class="toc__d" data-i18n="toc.5d"></span></a></li>
-      <li><a href="#journal"><span class="toc__no">06</span><span class="toc__t" data-i18n="toc.6"></span><span class="toc__d" data-i18n="toc.6d"></span></a></li>
-      <li><a href="#faq"><span class="toc__no">07</span><span class="toc__t" data-i18n="toc.7"></span><span class="toc__d" data-i18n="toc.7d"></span></a></li>
-    </ol>
-  </nav>
-
-  <!-- 01 Camp Lab -->
-  <section class="sec wrap" id="lab" aria-labelledby="labTitle">
-    <header class="sec__head">
-      <p class="sec__label"><span class="sec__no">01</span><span class="sec__kicker" data-i18n="lab.kicker"></span></p>
-      <h2 class="sec__title display" id="labTitle" data-i18n-html="lab.title"></h2>
-      <p class="sec__deck" data-i18n="lab.deck"></p>
-    </header>
-
-    <div class="quick">
-      <p class="quick__q mono" data-i18n="lab.quick"></p>
-      <div class="quick__grid">
-        <button class="quick__item" type="button" data-quick="family"><span class="quick__t" data-i18n="quick.family.t"></span><span class="quick__d" data-i18n="quick.family.d"></span></button>
-        <button class="quick__item" type="button" data-quick="school"><span class="quick__t" data-i18n="quick.school.t"></span><span class="quick__d" data-i18n="quick.school.d"></span></button>
-        <button class="quick__item" type="button" data-quick="activity"><span class="quick__t" data-i18n="quick.activity.t"></span><span class="quick__d" data-i18n="quick.activity.d"></span></button>
-        <button class="quick__item" type="button" data-quick="career"><span class="quick__t" data-i18n="quick.career.t"></span><span class="quick__d" data-i18n="quick.career.d"></span></button>
-        <button class="quick__item" type="button" data-quick="summer"><span class="quick__t" data-i18n="quick.summer.t"></span><span class="quick__d" data-i18n="quick.summer.d"></span></button>
-        <button class="quick__item" type="button" data-quick="stem"><span class="quick__t" data-i18n="quick.stem.t"></span><span class="quick__d" data-i18n="quick.stem.d"></span></button>
+      <div class="hero__ctas">
+        <a class="btn btn--ink btn--lg" href="#lab" data-start-diag><span data-i18n="hero.ctaDiag"></span><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+        <a class="btn btn--line btn--lg" href="#korea"><span data-i18n="hero.ctaKorea"></span></a>
       </div>
     </div>
 
-    <div class="filterbar" id="filterbar">
-      <div class="filterbar__row">
-        <div class="chips" id="catChips" role="group" data-i18n-attr="aria-label:f.cat"></div>
-        <div class="filterbar__tools">
-          <button class="btn btn--line btn--sm" id="moreFilters" type="button" aria-controls="filterDrawer">
-            <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M3 6h9M15 6h2M3 14h3M9 14h8" stroke="currentColor" stroke-width="1.3" fill="none"/><circle cx="13.5" cy="6" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="7.5" cy="14" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
-            <span data-i18n="f.more"></span><span class="badge" id="moreCount" hidden></span>
+    <div class="wrap">
+      <div class="worldmap" id="worldmap" data-mode="out">
+        <div class="worldmap__bar">
+          <div class="dirswitch" role="group" data-i18n-attr="aria-label:map.label">
+            <button class="dirswitch__btn" type="button" data-dir="out" aria-pressed="true" data-i18n="map.out"></button>
+            <button class="dirswitch__btn" type="button" data-dir="in" aria-pressed="false" data-i18n="map.in"></button>
+            <span class="dirswitch__thumb" aria-hidden="true"></span>
+          </div>
+          <p class="worldmap__note" id="mapNote" aria-live="polite"></p>
+          <button class="iconbtn worldmap__play" id="mapPlay" type="button" data-i18n-attr="aria-label:map.pause" aria-pressed="false">
+            <svg class="i-pause" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M7 4v12M13 4v12" stroke="currentColor" stroke-width="2"/></svg>
+            <svg class="i-play" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M6 4l10 6-10 6Z" fill="currentColor"/></svg>
           </button>
-          <label class="select">
-            <span class="vh" data-i18n="f.sort"></span>
-            <select id="sortSel"></select>
-          </label>
+        </div>
+        <div class="worldmap__stage" id="mapStage">
+          <div class="worldmap__inner" id="mapInner" role="img" data-i18n-attr="aria-label:map.label">
+            <canvas class="worldmap__canvas" id="mapCanvas" aria-hidden="true"></canvas>
+            <div class="worldmap__pins" id="mapPins"></div>
+            <div class="maptip glass" id="mapTip" hidden></div>
+          </div>
+        </div>
+        <div class="worldmap__foot">
+          <p class="worldmap__hint" id="mapHint"></p>
+          <p class="worldmap__cap" data-i18n="map.caption"></p>
         </div>
       </div>
-      <div class="filterbar__status">
-        <p class="count mono" id="campCount" aria-live="polite"></p>
-        <div class="active" id="activeFilters"></div>
-        <button class="linkbtn" id="resetFilters" type="button" data-i18n="f.reset" hidden></button>
-      </div>
     </div>
-
-    <div class="grid" id="campGrid" aria-busy="true" data-i18n-attr="aria-label:lab.loading"></div>
-    <div class="empty" id="campEmpty" hidden>
-      <p class="empty__t display" data-i18n="lab.empty.t"></p>
-      <p class="empty__d" data-i18n="lab.empty.d"></p>
-      <button class="btn btn--line btn--sm" type="button" data-reset-filters data-i18n="f.reset"></button>
-    </div>
-    <p class="notice"><strong class="mono" data-i18n="lab.noticeLabel"></strong> <span data-i18n="lab.notice"></span></p>
   </section>
 
-  <!-- 02 Feature -->
-  <article class="sec feature wrap" id="feature" aria-labelledby="featureTitle">
-    <header class="sec__head">
-      <p class="sec__label"><span class="sec__no">02</span><span class="sec__kicker" data-i18n="feature.kicker"></span></p>
-      <h2 class="sec__title display" id="featureTitle" data-i18n="feature.title"></h2>
-      <p class="feature__sub mono" data-i18n="feature.sub"></p>
-    </header>
+  <!-- Camp Lab -->
+  <section class="sec lab" id="lab" aria-labelledby="labTitle">
+    <div class="wrap">
+      <header class="sec__head">
+        <p class="kicker" data-i18n="lab.kicker"></p>
+        <h2 class="sec__title display" id="labTitle" data-i18n-html="lab.title"></h2>
+        <p class="sec__deck" data-i18n="lab.deck"></p>
+      </header>
 
-    <figure class="feature__hero">
-      <div class="frame frame--feature is-loading"><img src="assets/img/kpop-showcase.jpg" width="900" height="520" loading="lazy" data-i18n-attr="alt:cap.showcase"></div>
-      <figcaption class="cap"><span class="cap__no mono" data-fig="02"></span> <span data-i18n="cap.showcase"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
-    </figure>
-
-    <div class="feature__cols">
-      <div class="feature__text prose">
-        <p class="lede dropcap" data-i18n="feature.lead"></p>
-        <p data-i18n="feature.body1"></p>
-        <blockquote class="pull display"><p data-i18n="feature.pull"></p></blockquote>
-        <p data-i18n="feature.body2"></p>
-        <dl class="modules">
-          <div class="module"><dt data-i18n="feature.mod1.t"></dt><dd data-i18n="feature.mod1.d"></dd></div>
-          <div class="module"><dt data-i18n="feature.mod2.t"></dt><dd data-i18n="feature.mod2.d"></dd></div>
-          <div class="module"><dt data-i18n="feature.mod3.t"></dt><dd data-i18n="feature.mod3.d"></dd></div>
-          <div class="module"><dt data-i18n="feature.mod4.t"></dt><dd data-i18n="feature.mod4.d"></dd></div>
-        </dl>
+      <div class="diag" id="diag" aria-labelledby="diagTitle">
+        <div class="diag__intro" id="diagIntro">
+          <div class="diag__introText">
+            <p class="kicker kicker--y" data-i18n="diag.kicker"></p>
+            <h3 class="diag__title display" id="diagTitle" data-i18n="diag.title"></h3>
+            <p class="diag__deck" data-i18n="diag.deck"></p>
+            <button class="btn btn--yellow btn--lg" type="button" id="diagStart" data-i18n="diag.start"></button>
+          </div>
+          <ol class="diag__steps" aria-hidden="true">
+            <li><span>1</span><b data-i18n="q1.t"></b></li>
+            <li><span>2</span><b data-i18n="q2.t"></b></li>
+            <li><span>3</span><b data-i18n="q3.t"></b></li>
+            <li><span>4</span><b data-i18n="q4.t"></b></li>
+            <li><span>5</span><b data-i18n="q5.t"></b></li>
+            <li><span>6</span><b data-i18n="q6.t"></b></li>
+          </ol>
+        </div>
+        <div class="diag__run" id="diagRun" hidden>
+          <div class="diag__top">
+            <span class="diag__count" id="diagCount"></span>
+            <div class="diag__progress" aria-hidden="true"><i id="diagBar"></i></div>
+            <button class="iconbtn diag__x" type="button" id="diagClose" data-i18n-attr="aria-label:diag.close"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5"/></svg></button>
+          </div>
+          <div class="diag__q" id="diagQ"></div>
+          <div class="diag__nav">
+            <button class="linkbtn linkbtn--inv" type="button" id="diagPrev" data-i18n="diag.prev"></button>
+            <span class="diag__spacer"></span>
+            <button class="linkbtn linkbtn--inv" type="button" id="diagSkip" data-i18n="diag.skip"></button>
+            <button class="btn btn--yellow" type="button" id="diagNext" data-i18n="diag.next"></button>
+          </div>
+        </div>
+        <div class="diag__result" id="diagResult" hidden aria-live="polite"></div>
       </div>
-      <aside class="factbox" aria-labelledby="factTitle">
-        <h3 class="factbox__title mono" id="factTitle" data-i18n="feature.facts"></h3>
-        <dl class="factbox__list">
-          <div><dt data-i18n="fact.len.k"></dt><dd data-i18n="fact.len.v"></dd></div>
-          <div><dt data-i18n="fact.age.k"></dt><dd data-i18n="fact.age.v"></dd></div>
-          <div><dt data-i18n="fact.lang.k"></dt><dd data-i18n="fact.lang.v"></dd></div>
-          <div><dt data-i18n="fact.where.k"></dt><dd data-i18n="fact.where.v"></dd></div>
-          <div><dt data-i18n="fact.final.k"></dt><dd data-i18n="fact.final.v"></dd></div>
-        </dl>
-        <button class="btn btn--paper btn--block" type="button" data-open-inquiry data-role="student" data-interest-text="K-POP Creative Summer" data-i18n="feature.cta"></button>
-      </aside>
-    </div>
 
-    <div class="feature__gallery">
-      <figure class="g-a">
-        <div class="frame frame--16x9 is-loading"><img src="assets/img/kpop-dance.jpg" width="700" height="394" loading="lazy" data-i18n-attr="alt:cap.dance"></div>
-        <figcaption class="cap"><span class="cap__no mono" data-fig="03"></span> <span data-i18n="cap.dance"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
+      <div class="lablist">
+        <h3 class="subhead" data-i18n="lab.listTitle"></h3>
+        <div class="quick">
+          <p class="quick__q" data-i18n="lab.quick"></p>
+          <div class="quick__grid">
+            <button class="quick__item" type="button" data-quick="family"><span class="quick__t" data-i18n="quick.family.t"></span><span class="quick__d" data-i18n="quick.family.d"></span></button>
+            <button class="quick__item" type="button" data-quick="school"><span class="quick__t" data-i18n="quick.school.t"></span><span class="quick__d" data-i18n="quick.school.d"></span></button>
+            <button class="quick__item" type="button" data-quick="activity"><span class="quick__t" data-i18n="quick.activity.t"></span><span class="quick__d" data-i18n="quick.activity.d"></span></button>
+            <button class="quick__item" type="button" data-quick="career"><span class="quick__t" data-i18n="quick.career.t"></span><span class="quick__d" data-i18n="quick.career.d"></span></button>
+            <button class="quick__item" type="button" data-quick="summer"><span class="quick__t" data-i18n="quick.summer.t"></span><span class="quick__d" data-i18n="quick.summer.d"></span></button>
+            <button class="quick__item" type="button" data-quick="stem"><span class="quick__t" data-i18n="quick.stem.t"></span><span class="quick__d" data-i18n="quick.stem.d"></span></button>
+          </div>
+        </div>
+
+        <div class="filterbar" id="filterbar">
+          <div class="filterbar__row">
+            <div class="chips" id="catChips" role="group" data-i18n-attr="aria-label:f.cat"></div>
+            <div class="filterbar__tools">
+              <button class="btn btn--line btn--sm" id="moreFilters" type="button" aria-controls="filterDrawer">
+                <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M3 6h9M15 6h2M3 14h3M9 14h8" stroke="currentColor" stroke-width="1.3" fill="none"/><circle cx="13.5" cy="6" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="7.5" cy="14" r="1.6" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>
+                <span data-i18n="f.more"></span><span class="badge" id="moreCount" hidden></span>
+              </button>
+              <label class="select">
+                <span class="vh" data-i18n="f.sort"></span>
+                <select id="sortSel"></select>
+              </label>
+            </div>
+          </div>
+          <div class="filterbar__status">
+            <p class="count" id="campCount" aria-live="polite"></p>
+            <div class="active" id="activeFilters"></div>
+            <button class="linkbtn" id="resetFilters" type="button" data-i18n="f.reset" hidden></button>
+          </div>
+        </div>
+
+        <div class="grid" id="campGrid" aria-busy="true" data-i18n-attr="aria-label:lab.loading"></div>
+        <div class="empty" id="campEmpty" hidden>
+          <p class="empty__t display" data-i18n="lab.empty.t"></p>
+          <p class="empty__d" data-i18n="lab.empty.d"></p>
+          <button class="btn btn--line btn--sm" type="button" data-reset-filters data-i18n="f.reset"></button>
+        </div>
+        <p class="notice"><strong data-i18n="lab.noticeLabel"></strong> <span data-i18n="lab.notice"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature: K-POP Creative Summer -->
+  <article class="sec feature" id="feature" aria-labelledby="featureTitle">
+    <div class="wrap">
+      <header class="sec__head">
+        <p class="kicker" data-i18n="feature.kicker"></p>
+        <h2 class="sec__title display" id="featureTitle" data-i18n="feature.title"></h2>
+        <p class="sec__deck feature__sub" data-i18n="feature.sub"></p>
+      </header>
+
+      <figure class="feature__hero">
+        <div class="frame frame--feature is-loading"><img src="assets/img/kpop-showcase.jpg" width="900" height="520" loading="lazy" data-i18n-attr="alt:cap.showcase"></div>
+        <figcaption class="cap"><span class="cap__no" data-fig="01"></span> <span data-i18n="cap.showcase"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
       </figure>
-      <figure class="g-b">
-        <div class="frame frame--3x4 is-loading"><img src="assets/img/seoul-forest.jpg" width="675" height="900" loading="lazy" data-i18n-attr="alt:cap.forest"></div>
-        <figcaption class="cap"><span class="cap__no mono" data-fig="04"></span> <span data-i18n="cap.forest"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
-      </figure>
-      <figure class="g-c">
-        <div class="frame frame--3x2 is-loading"><img src="assets/img/broadcast-room.jpg" width="700" height="467" loading="lazy" data-i18n-attr="alt:cap.broadcast"></div>
-        <figcaption class="cap"><span class="cap__no mono" data-fig="05"></span> <span data-i18n="cap.broadcast"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
-      </figure>
+
+      <div class="feature__cols">
+        <div class="feature__text prose">
+          <p class="lede" data-i18n="feature.lead"></p>
+          <p data-i18n="feature.body1"></p>
+          <blockquote class="pull display"><p data-i18n="feature.pull"></p></blockquote>
+          <p data-i18n="feature.body2"></p>
+          <dl class="modules">
+            <div class="module"><dt data-i18n="feature.mod1.t"></dt><dd data-i18n="feature.mod1.d"></dd></div>
+            <div class="module"><dt data-i18n="feature.mod2.t"></dt><dd data-i18n="feature.mod2.d"></dd></div>
+            <div class="module"><dt data-i18n="feature.mod3.t"></dt><dd data-i18n="feature.mod3.d"></dd></div>
+            <div class="module"><dt data-i18n="feature.mod4.t"></dt><dd data-i18n="feature.mod4.d"></dd></div>
+          </dl>
+        </div>
+        <aside class="factbox" aria-labelledby="factTitle">
+          <figure class="factbox__fig">
+            <div class="frame frame--3x2 is-loading"><img src="assets/img/kpop-friends.jpg" width="1282" height="855" loading="lazy" data-i18n-attr="alt:hero.caption"></div>
+            <figcaption class="cap"><span class="cap__no" data-fig="02"></span> <span data-i18n="hero.caption"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
+          </figure>
+          <h3 class="factbox__title" id="factTitle" data-i18n="feature.facts"></h3>
+          <dl class="factbox__list">
+            <div><dt data-i18n="fact.len.k"></dt><dd data-i18n="fact.len.v"></dd></div>
+            <div><dt data-i18n="fact.age.k"></dt><dd data-i18n="fact.age.v"></dd></div>
+            <div><dt data-i18n="fact.lang.k"></dt><dd data-i18n="fact.lang.v"></dd></div>
+            <div><dt data-i18n="fact.where.k"></dt><dd data-i18n="fact.where.v"></dd></div>
+            <div><dt data-i18n="fact.final.k"></dt><dd data-i18n="fact.final.v"></dd></div>
+          </dl>
+          <button class="btn btn--yellow btn--block" type="button" data-open-inquiry data-role="student" data-interest-text="K-POP Creative Summer" data-i18n="feature.cta"></button>
+        </aside>
+      </div>
+
+      <div class="feature__gallery">
+        <figure class="g-vocal">
+          <div class="frame frame--3x2 is-loading"><img src="assets/img/kpop-vocal.jpg" width="1536" height="1024" loading="lazy" data-i18n-attr="alt:cap.vocal"></div>
+          <figcaption class="cap"><span class="cap__no" data-fig="03"></span> <span data-i18n="cap.vocal"></span> <span class="cap__credit" data-i18n="credit.staged"></span></figcaption>
+        </figure>
+        <figure class="g-forest">
+          <div class="frame frame--3x4 is-loading"><img src="assets/img/seoul-forest.jpg" width="675" height="900" loading="lazy" data-i18n-attr="alt:cap.forest"></div>
+          <figcaption class="cap"><span class="cap__no" data-fig="04"></span> <span data-i18n="cap.forest"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
+        </figure>
+        <figure class="g-dance">
+          <div class="frame frame--16x9 is-loading"><img src="assets/img/kpop-dance.jpg" width="700" height="394" loading="lazy" data-i18n-attr="alt:cap.dance"></div>
+          <figcaption class="cap"><span class="cap__no" data-fig="05"></span> <span data-i18n="cap.dance"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
+        </figure>
+        <figure class="g-broadcast">
+          <div class="frame frame--3x2 is-loading"><img src="assets/img/broadcast-room.jpg" width="700" height="467" loading="lazy" data-i18n-attr="alt:cap.broadcast"></div>
+          <figcaption class="cap"><span class="cap__no" data-fig="06"></span> <span data-i18n="cap.broadcast"></span> <span class="cap__credit" data-i18n="credit.real"></span></figcaption>
+        </figure>
+      </div>
     </div>
   </article>
 
-  <!-- 03 Camps in Korea (inverted page) -->
+  <!-- Camps in Korea (black page) -->
   <section class="sec korea" id="korea" aria-labelledby="koreaTitle">
     <div class="wrap">
       <header class="sec__head">
-        <p class="sec__label"><span class="sec__no">03</span><span class="sec__kicker" data-i18n="korea.kicker"></span></p>
+        <p class="kicker kicker--y" data-i18n="korea.kicker"></p>
         <h2 class="sec__title display" id="koreaTitle" data-i18n-html="korea.title"></h2>
         <p class="sec__deck" data-i18n="korea.deck"></p>
       </header>
       <ul class="index" id="koreaIndex">
-        <li><button class="index__row" type="button" data-korea="p1" data-img="kpop-dance.jpg"><span class="index__t display" data-i18n="korea.p1.t"></span><span class="index__d" data-i18n="korea.p1.d"></span><span class="index__thumb"><img src="assets/img/kpop-dance.jpg" alt="" loading="lazy" width="700" height="394"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
-        <li><button class="index__row" type="button" data-korea="p2" data-img="kpop-friends.jpg"><span class="index__t display" data-i18n="korea.p2.t"></span><span class="index__d" data-i18n="korea.p2.d"></span><span class="index__thumb"><img src="assets/img/kpop-friends.jpg" alt="" loading="lazy" width="1282" height="855"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
-        <li><button class="index__row" type="button" data-korea="p3" data-img="broadcast-room.jpg"><span class="index__t display" data-i18n="korea.p3.t"></span><span class="index__d" data-i18n="korea.p3.d"></span><span class="index__thumb"><img src="assets/img/broadcast-room.jpg" alt="" loading="lazy" width="700" height="467"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
-        <li><button class="index__row" type="button" data-korea="p4" data-img="seoul-campus.jpg" data-staged><span class="index__t display" data-i18n="korea.p4.t"></span><span class="index__d" data-i18n="korea.p4.d"></span><span class="index__thumb"><img src="assets/img/seoul-campus.jpg" alt="" loading="lazy" width="1536" height="1024"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
-        <li><button class="index__row" type="button" data-korea="p5" data-img="kpop-showcase.jpg" data-role="school"><span class="index__t display" data-i18n="korea.p5.t"></span><span class="index__d" data-i18n="korea.p5.d"></span><span class="index__thumb"><img src="assets/img/kpop-showcase.jpg" alt="" loading="lazy" width="900" height="520"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
-        <li><button class="index__row" type="button" data-korea="p6" data-img="seoul-forest.jpg"><span class="index__t display" data-i18n="korea.p6.t"></span><span class="index__d" data-i18n="korea.p6.d"></span><span class="index__thumb"><img src="assets/img/seoul-forest.jpg" alt="" loading="lazy" width="675" height="900"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
+        <li><button class="index__row" type="button" data-korea="p1" data-img="kpop-vocal.jpg" data-staged><span class="index__t display" data-i18n="korea.p1.t"></span><span class="index__d" data-i18n="korea.p1.d"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
+        <li><button class="index__row" type="button" data-korea="p2" data-img="kpop-friends.jpg"><span class="index__t display" data-i18n="korea.p2.t"></span><span class="index__d" data-i18n="korea.p2.d"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
+        <li><button class="index__row" type="button" data-korea="p3" data-img="broadcast-room.jpg"><span class="index__t display" data-i18n="korea.p3.t"></span><span class="index__d" data-i18n="korea.p3.d"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
+        <li><button class="index__row" type="button" data-korea="p4" data-img="seoul-campus.jpg" data-staged><span class="index__t display" data-i18n="korea.p4.t"></span><span class="index__d" data-i18n="korea.p4.d"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
+        <li><button class="index__row" type="button" data-korea="p5" data-img="kpop-showcase.jpg" data-role="school"><span class="index__t display" data-i18n="korea.p5.t"></span><span class="index__d" data-i18n="korea.p5.d"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
+        <li><button class="index__row" type="button" data-korea="p6" data-img="seoul-forest.jpg"><span class="index__t display" data-i18n="korea.p6.t"></span><span class="index__d" data-i18n="korea.p6.d"></span><svg class="index__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button></li>
       </ul>
       <div class="korea__foot">
         <p data-i18n="korea.note"></p>
-        <button class="btn btn--paper" type="button" data-open-inquiry data-role="school" data-i18n="korea.cta"></button>
+        <button class="btn btn--yellow" type="button" data-open-inquiry data-role="school" data-i18n="korea.cta"></button>
       </div>
     </div>
-    <div class="hoverimg" id="hoverImg" aria-hidden="true"><img alt=""><span class="hoverimg__tag mono"></span></div>
+    <div class="hoverimg" id="hoverImg" aria-hidden="true"><img alt=""><span class="hoverimg__tag"></span></div>
   </section>
 
-  <!-- 04 How we work -->
-  <section class="sec how wrap" id="how" aria-labelledby="howTitle">
-    <header class="sec__head">
-      <p class="sec__label"><span class="sec__no">04</span><span class="sec__kicker" data-i18n="how.kicker"></span></p>
-      <h2 class="sec__title display" id="howTitle" data-i18n-html="how.title"></h2>
-      <p class="sec__deck" data-i18n="how.deck"></p>
-    </header>
+  <!-- How we work -->
+  <section class="sec how" id="how" aria-labelledby="howTitle">
+    <div class="wrap">
+      <header class="sec__head">
+        <p class="kicker" data-i18n="how.kicker"></p>
+        <h2 class="sec__title display" id="howTitle" data-i18n-html="how.title"></h2>
+        <p class="sec__deck" data-i18n="how.deck"></p>
+      </header>
 
-    <div class="how__grid">
-      <div class="how__media">
-        <figure class="how__fig is-active" data-media="a">
-          <div class="frame frame--3x2 is-loading"><img src="assets/img/prep-kit.jpg" width="1536" height="1024" loading="lazy" data-i18n-attr="alt:cap.prep"></div>
-          <figcaption class="cap"><span class="cap__no mono" data-fig="06"></span> <span data-i18n="cap.prep"></span> <span class="cap__credit" data-i18n="credit.staged"></span></figcaption>
-        </figure>
-        <figure class="how__fig" data-media="b">
-          <div class="frame frame--3x2 frame--top is-loading"><img src="assets/img/departure.jpg" width="1024" height="1536" loading="lazy" data-i18n-attr="alt:cap.departure"></div>
-          <figcaption class="cap"><span class="cap__no mono" data-fig="07"></span> <span data-i18n="cap.departure"></span> <span class="cap__credit" data-i18n="credit.staged"></span></figcaption>
-        </figure>
-      </div>
-      <ol class="steps" id="steps">
-        <li class="step" data-step="1" data-media="a"><span class="step__no mono"><span data-i18n="how.stepLabel"></span> 01</span><h3 class="step__t display" data-i18n="step1.t"></h3><p data-i18n="step1.d"></p></li>
-        <li class="step" data-step="2" data-media="a"><span class="step__no mono"><span data-i18n="how.stepLabel"></span> 02</span><h3 class="step__t display" data-i18n="step2.t"></h3><p data-i18n="step2.d"></p></li>
-        <li class="step" data-step="3" data-media="a"><span class="step__no mono"><span data-i18n="how.stepLabel"></span> 03</span><h3 class="step__t display" data-i18n="step3.t"></h3><p data-i18n="step3.d"></p></li>
-        <li class="step" data-step="4" data-media="b"><span class="step__no mono"><span data-i18n="how.stepLabel"></span> 04</span><h3 class="step__t display" data-i18n="step4.t"></h3><p data-i18n="step4.d"></p></li>
-        <li class="step" data-step="5" data-media="b"><span class="step__no mono"><span data-i18n="how.stepLabel"></span> 05</span><h3 class="step__t display" data-i18n="step5.t"></h3><p data-i18n="step5.d"></p></li>
-        <li class="step" data-step="6" data-media="b"><span class="step__no mono"><span data-i18n="how.stepLabel"></span> 06</span><h3 class="step__t display" data-i18n="step6.t"></h3><p data-i18n="step6.d"></p></li>
-      </ol>
-    </div>
-
-    <div class="how__lower">
-      <div class="principles">
-        <h3 class="subhead display" data-i18n="pr.title"></h3>
-        <ul class="principles__list">
-          <li><p class="pr__t display" data-i18n="pr1.t"></p><p class="pr__d" data-i18n="pr1.d"></p></li>
-          <li><p class="pr__t display" data-i18n="pr2.t"></p><p class="pr__d" data-i18n="pr2.d"></p></li>
-          <li><p class="pr__t display" data-i18n="pr3.t"></p><p class="pr__d" data-i18n="pr3.d"></p></li>
-          <li><p class="pr__t display" data-i18n="pr4.t"></p><p class="pr__d" data-i18n="pr4.d"></p></li>
-          <li><p class="pr__t display" data-i18n="pr5.t"></p><p class="pr__d" data-i18n="pr5.d"></p></li>
-        </ul>
-      </div>
-      <div class="safety">
-        <h3 class="subhead display" data-i18n="safety.title"></h3>
-        <div class="accordion" data-accordion>
-          <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa1b" aria-expanded="true" aria-controls="sa1"><span data-i18n="safety.q1"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa1" role="region" aria-labelledby="sa1b"><div class="acc__inner"><p data-i18n="safety.a1"></p></div></div></div>
-          <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa2b" aria-expanded="false" aria-controls="sa2"><span data-i18n="safety.q2"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa2" role="region" aria-labelledby="sa2b"><div class="acc__inner"><p data-i18n="safety.a2"></p></div></div></div>
-          <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa3b" aria-expanded="false" aria-controls="sa3"><span data-i18n="safety.q3"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa3" role="region" aria-labelledby="sa3b"><div class="acc__inner"><p data-i18n="safety.a3"></p></div></div></div>
-          <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa4b" aria-expanded="false" aria-controls="sa4"><span data-i18n="safety.q4"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa4" role="region" aria-labelledby="sa4b"><div class="acc__inner"><p data-i18n="safety.a4"></p></div></div></div>
-          <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa5b" aria-expanded="false" aria-controls="sa5"><span data-i18n="safety.q5"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa5" role="region" aria-labelledby="sa5b"><div class="acc__inner"><p data-i18n="safety.a5"></p></div></div></div>
+      <div class="how__grid">
+        <div class="how__media">
+          <figure class="how__fig is-active" data-media="a">
+            <div class="frame frame--3x2 is-loading"><img src="assets/img/prep-kit.jpg" width="1536" height="1024" loading="lazy" data-i18n-attr="alt:cap.prep"></div>
+            <figcaption class="cap"><span class="cap__no" data-fig="07"></span> <span data-i18n="cap.prep"></span> <span class="cap__credit" data-i18n="credit.staged"></span></figcaption>
+          </figure>
+          <figure class="how__fig" data-media="b">
+            <div class="frame frame--3x2 frame--top is-loading"><img src="assets/img/departure.jpg" width="1024" height="1536" loading="lazy" data-i18n-attr="alt:cap.departure"></div>
+            <figcaption class="cap"><span class="cap__no" data-fig="08"></span> <span data-i18n="cap.departure"></span> <span class="cap__credit" data-i18n="credit.staged"></span></figcaption>
+          </figure>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Numbers -->
-  <section class="stats wrap" aria-labelledby="statsTitle">
-    <h2 class="stats__title mono" id="statsTitle" data-i18n="stats.title"></h2>
-    <div class="stats__grid">
-      <div class="stat"><p class="stat__v display" data-count="2800" data-suffix="+">2,800+</p><p class="stat__k" data-i18n="stat1.k"></p><p class="stat__d" data-i18n="stat1.d"></p></div>
-      <div class="stat"><p class="stat__v display" data-count="98" data-suffix="%">98%</p><p class="stat__k" data-i18n="stat2.k"></p><p class="stat__d" data-i18n="stat2.d"></p></div>
-      <div class="stat"><p class="stat__v display" data-count="200" data-suffix="+">200+</p><p class="stat__k" data-i18n="stat3.k"></p><p class="stat__d" data-i18n="stat3.d"></p></div>
-      <div class="stat"><p class="stat__v display">2025</p><p class="stat__k" data-i18n="stat4.k"></p><p class="stat__d" data-i18n="stat4.d"></p></div>
-    </div>
-    <p class="stats__src" data-i18n="stats.src"></p>
-  </section>
-
-  <!-- 05 Partners -->
-  <section class="sec partners wrap" id="partners" aria-labelledby="partnersTitle">
-    <header class="sec__head">
-      <p class="sec__label"><span class="sec__no">05</span><span class="sec__kicker" data-i18n="partners.kicker"></span></p>
-      <h2 class="sec__title display" id="partnersTitle" data-i18n-html="partners.title"></h2>
-      <p class="sec__deck" data-i18n="partners.deck"></p>
-    </header>
-    <div class="partners__grid">
-      <div class="partners__col">
-        <h3 class="minihead mono" data-i18n="partners.flowTitle"></h3>
-        <ol class="flow">
-          <li><span class="flow__no mono">01</span><p class="flow__t display" data-i18n="flow1.t"></p><p class="flow__d" data-i18n="flow1.d"></p></li>
-          <li><span class="flow__no mono">02</span><p class="flow__t display" data-i18n="flow2.t"></p><p class="flow__d" data-i18n="flow2.d"></p></li>
-          <li><span class="flow__no mono">03</span><p class="flow__t display" data-i18n="flow3.t"></p><p class="flow__d" data-i18n="flow3.d"></p></li>
-          <li><span class="flow__no mono">04</span><p class="flow__t display" data-i18n="flow4.t"></p><p class="flow__d" data-i18n="flow4.d"></p></li>
+        <ol class="steps" id="steps">
+          <li class="step" data-step="1" data-media="a"><span class="step__no"><span data-i18n="how.stepLabel"></span> 01</span><h3 class="step__t" data-i18n="step1.t"></h3><p data-i18n="step1.d"></p></li>
+          <li class="step" data-step="2" data-media="a"><span class="step__no"><span data-i18n="how.stepLabel"></span> 02</span><h3 class="step__t" data-i18n="step2.t"></h3><p data-i18n="step2.d"></p></li>
+          <li class="step" data-step="3" data-media="a"><span class="step__no"><span data-i18n="how.stepLabel"></span> 03</span><h3 class="step__t" data-i18n="step3.t"></h3><p data-i18n="step3.d"></p></li>
+          <li class="step" data-step="4" data-media="b"><span class="step__no"><span data-i18n="how.stepLabel"></span> 04</span><h3 class="step__t" data-i18n="step4.t"></h3><p data-i18n="step4.d"></p></li>
+          <li class="step" data-step="5" data-media="b"><span class="step__no"><span data-i18n="how.stepLabel"></span> 05</span><h3 class="step__t" data-i18n="step5.t"></h3><p data-i18n="step5.d"></p></li>
+          <li class="step" data-step="6" data-media="b"><span class="step__no"><span data-i18n="how.stepLabel"></span> 06</span><h3 class="step__t" data-i18n="step6.t"></h3><p data-i18n="step6.d"></p></li>
         </ol>
-        <div class="terms">
-          <p class="terms__k mono" data-i18n="partners.terms.k"></p>
-          <p class="terms__v display" data-i18n="partners.terms.v"></p>
-        </div>
       </div>
-      <div class="partners__col">
-        <h3 class="minihead mono" data-i18n="partners.getTitle"></h3>
-        <ul class="gets">
-          <li data-i18n="get1"></li>
-          <li data-i18n="get2"></li>
-          <li data-i18n="get3"></li>
-          <li data-i18n="get4"></li>
-        </ul>
-        <h3 class="minihead mono" data-i18n="partners.progTitle"></h3>
-        <ul class="progs">
-          <li data-i18n="prog1"></li>
-          <li data-i18n="prog2"></li>
-          <li data-i18n="prog3"></li>
-          <li data-i18n="prog4"></li>
-          <li data-i18n="prog5"></li>
-          <li data-i18n="prog6"></li>
-        </ul>
-      </div>
-    </div>
-    <figure class="event">
-      <div class="frame frame--wide is-loading">
-        <img src="assets/img/leadership-seminar.jpg" width="1536" height="1024" loading="lazy" data-i18n-attr="alt:cap.leadership">
-        <div class="event__card glass glass--refract">
-          <p class="event__k mono" data-i18n="partners.event.k"></p>
-          <p class="event__t display" data-i18n="partners.event.t"></p>
-          <p class="event__d" data-i18n="partners.event.d"></p>
-          <button class="btn btn--ink btn--sm" type="button" data-open-inquiry data-role="school" data-i18n="partners.cta"></button>
-        </div>
-      </div>
-      <figcaption class="cap"><span class="cap__no mono" data-fig="08"></span> <span data-i18n="cap.leadership"></span> <span class="cap__credit" data-i18n="credit.staged"></span></figcaption>
-    </figure>
-  </section>
 
-  <!-- 06 Journal -->
-  <section class="sec journal wrap" id="journal" aria-labelledby="journalTitle">
-    <header class="sec__head">
-      <p class="sec__label"><span class="sec__no">06</span><span class="sec__kicker" data-i18n="journal.kicker"></span></p>
-      <h2 class="sec__title display" id="journalTitle" data-i18n-html="journal.title"></h2>
-      <p class="sec__deck" data-i18n="journal.deck"></p>
-    </header>
-    <div class="journal__grid">
-      <article class="jcard jcard--lead">
-        <button class="jcard__btn" type="button" data-article="a1" aria-controls="articleDrawer">
-          <span class="frame frame--4x5 is-loading"><img src="assets/img/departure.jpg" alt="" width="1024" height="1536" loading="lazy"></span>
-          <span class="jcard__body">
-            <span class="jcard__k mono" data-i18n="a1.k"></span>
-            <span class="jcard__t display" data-i18n="a1.t"></span>
-            <span class="jcard__d" data-i18n="a1.d"></span>
-            <span class="jcard__meta mono"><span data-i18n="journal.by"></span> · <span data-min="3"></span></span>
-          </span>
-        </button>
-      </article>
-      <article class="jcard">
-        <button class="jcard__btn" type="button" data-article="a2" aria-controls="articleDrawer">
-          <span class="frame frame--3x2 is-loading"><img src="assets/img/medical-skills.jpg" alt="" width="1536" height="1024" loading="lazy"></span>
-          <span class="jcard__body">
-            <span class="jcard__k mono" data-i18n="a2.k"></span>
-            <span class="jcard__t display" data-i18n="a2.t"></span>
-            <span class="jcard__d" data-i18n="a2.d"></span>
-            <span class="jcard__meta mono"><span data-i18n="journal.by"></span> · <span data-min="3"></span></span>
-          </span>
-        </button>
-      </article>
-      <article class="jcard">
-        <button class="jcard__btn" type="button" data-article="a3" aria-controls="articleDrawer">
-          <span class="frame frame--3x2 is-loading"><img src="assets/img/cebu-family.jpg" alt="" width="1536" height="1024" loading="lazy"></span>
-          <span class="jcard__body">
-            <span class="jcard__k mono" data-i18n="a3.k"></span>
-            <span class="jcard__t display" data-i18n="a3.t"></span>
-            <span class="jcard__d" data-i18n="a3.d"></span>
-            <span class="jcard__meta mono"><span data-i18n="journal.by"></span> · <span data-min="3"></span></span>
-          </span>
-        </button>
-      </article>
-    </div>
-  </section>
-
-  <!-- 07 FAQ -->
-  <section class="sec faq wrap" id="faq" aria-labelledby="faqTitle">
-    <header class="sec__head">
-      <p class="sec__label"><span class="sec__no">07</span><span class="sec__kicker" data-i18n="faq.kicker"></span></p>
-      <h2 class="sec__title display" id="faqTitle" data-i18n="faq.title"></h2>
-    </header>
-    <div class="faq__body">
-      <div class="tabs" role="tablist" data-i18n-attr="aria-label:faq.title">
-        <button class="tab" role="tab" type="button" id="tabParents" aria-selected="true" aria-controls="faqParents" data-i18n="faq.tabParents"></button>
-        <button class="tab" role="tab" type="button" id="tabPartners" aria-selected="false" aria-controls="faqPartners" tabindex="-1" data-i18n="faq.tabPartners"></button>
-      </div>
-      <div class="tabpanel" id="faqParents" role="tabpanel" aria-labelledby="tabParents">
-        <div class="accordion" data-accordion>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq1b" aria-expanded="false" aria-controls="fq1"><span data-i18n="fq1.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq1" role="region" aria-labelledby="fq1b"><div class="acc__inner"><p data-i18n="fq1.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq2b" aria-expanded="false" aria-controls="fq2"><span data-i18n="fq2.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq2" role="region" aria-labelledby="fq2b"><div class="acc__inner"><p data-i18n="fq2.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq3b" aria-expanded="false" aria-controls="fq3"><span data-i18n="fq3.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq3" role="region" aria-labelledby="fq3b"><div class="acc__inner"><p data-i18n="fq3.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq4b" aria-expanded="false" aria-controls="fq4"><span data-i18n="fq4.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq4" role="region" aria-labelledby="fq4b"><div class="acc__inner"><p data-i18n="fq4.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq5b" aria-expanded="false" aria-controls="fq5"><span data-i18n="fq5.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq5" role="region" aria-labelledby="fq5b"><div class="acc__inner"><p data-i18n="fq5.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq6b" aria-expanded="false" aria-controls="fq6"><span data-i18n="fq6.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq6" role="region" aria-labelledby="fq6b"><div class="acc__inner"><p data-i18n="fq6.a"></p></div></div></div>
+      <div class="how__lower">
+        <div class="principles">
+          <h3 class="subhead" data-i18n="pr.title"></h3>
+          <ul class="principles__list">
+            <li><p class="pr__t" data-i18n="pr1.t"></p><p class="pr__d" data-i18n="pr1.d"></p></li>
+            <li><p class="pr__t" data-i18n="pr2.t"></p><p class="pr__d" data-i18n="pr2.d"></p></li>
+            <li><p class="pr__t" data-i18n="pr3.t"></p><p class="pr__d" data-i18n="pr3.d"></p></li>
+            <li><p class="pr__t" data-i18n="pr4.t"></p><p class="pr__d" data-i18n="pr4.d"></p></li>
+            <li><p class="pr__t" data-i18n="pr5.t"></p><p class="pr__d" data-i18n="pr5.d"></p></li>
+          </ul>
         </div>
-      </div>
-      <div class="tabpanel" id="faqPartners" role="tabpanel" aria-labelledby="tabPartners" hidden>
-        <div class="accordion" data-accordion>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp1b" aria-expanded="false" aria-controls="fp1"><span data-i18n="fp1.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp1" role="region" aria-labelledby="fp1b"><div class="acc__inner"><p data-i18n="fp1.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp2b" aria-expanded="false" aria-controls="fp2"><span data-i18n="fp2.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp2" role="region" aria-labelledby="fp2b"><div class="acc__inner"><p data-i18n="fp2.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp3b" aria-expanded="false" aria-controls="fp3"><span data-i18n="fp3.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp3" role="region" aria-labelledby="fp3b"><div class="acc__inner"><p data-i18n="fp3.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp4b" aria-expanded="false" aria-controls="fp4"><span data-i18n="fp4.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp4" role="region" aria-labelledby="fp4b"><div class="acc__inner"><p data-i18n="fp4.a"></p></div></div></div>
-          <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp5b" aria-expanded="false" aria-controls="fp5"><span data-i18n="fp5.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp5" role="region" aria-labelledby="fp5b"><div class="acc__inner"><p data-i18n="fp5.a"></p></div></div></div>
+        <div class="safety">
+          <h3 class="subhead" data-i18n="safety.title"></h3>
+          <div class="accordion" data-accordion>
+            <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa1b" aria-expanded="true" aria-controls="sa1"><span data-i18n="safety.q1"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa1" role="region" aria-labelledby="sa1b"><div class="acc__inner"><p data-i18n="safety.a1"></p></div></div></div>
+            <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa2b" aria-expanded="false" aria-controls="sa2"><span data-i18n="safety.q2"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa2" role="region" aria-labelledby="sa2b"><div class="acc__inner"><p data-i18n="safety.a2"></p></div></div></div>
+            <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa3b" aria-expanded="false" aria-controls="sa3"><span data-i18n="safety.q3"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa3" role="region" aria-labelledby="sa3b"><div class="acc__inner"><p data-i18n="safety.a3"></p></div></div></div>
+            <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa4b" aria-expanded="false" aria-controls="sa4"><span data-i18n="safety.q4"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa4" role="region" aria-labelledby="sa4b"><div class="acc__inner"><p data-i18n="safety.a4"></p></div></div></div>
+            <div class="acc"><h4 class="acc__h"><button class="acc__btn" type="button" id="sa5b" aria-expanded="false" aria-controls="sa5"><span data-i18n="safety.q5"></span><span class="acc__icon" aria-hidden="true"></span></button></h4><div class="acc__panel" id="sa5" role="region" aria-labelledby="sa5b"><div class="acc__inner"><p data-i18n="safety.a5"></p></div></div></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Numbers (yellow band) -->
+  <section class="stats" aria-labelledby="statsTitle">
+    <div class="wrap">
+      <h2 class="stats__title" id="statsTitle" data-i18n="stats.title"></h2>
+      <div class="stats__grid">
+        <div class="stat"><p class="stat__v" data-count="2800" data-suffix="+">2,800+</p><p class="stat__k" data-i18n="stat1.k"></p><p class="stat__d" data-i18n="stat1.d"></p></div>
+        <div class="stat"><p class="stat__v" data-count="98" data-suffix="%">98%</p><p class="stat__k" data-i18n="stat2.k"></p><p class="stat__d" data-i18n="stat2.d"></p></div>
+        <div class="stat"><p class="stat__v" data-count="200" data-suffix="+">200+</p><p class="stat__k" data-i18n="stat3.k"></p><p class="stat__d" data-i18n="stat3.d"></p></div>
+        <div class="stat"><p class="stat__v">2025</p><p class="stat__k" data-i18n="stat4.k"></p><p class="stat__d" data-i18n="stat4.d"></p></div>
+      </div>
+      <p class="stats__src" data-i18n="stats.src"></p>
+    </div>
+  </section>
+
+  <!-- Partnerships -->
+  <section class="sec partners" id="partners" aria-labelledby="partnersTitle">
+    <div class="wrap">
+      <header class="sec__head">
+        <p class="kicker" data-i18n="partners.kicker"></p>
+        <h2 class="sec__title display" id="partnersTitle" data-i18n-html="partners.title"></h2>
+        <p class="sec__deck" data-i18n="partners.deck"></p>
+      </header>
+
+      <h3 class="subhead" data-i18n="pm.title"></h3>
+      <div class="models">
+        <article class="model"><span class="model__tag" data-i18n="pm1.tag"></span><h4 class="model__t" data-i18n="pm1.t"></h4><p class="model__d" data-i18n="pm1.d"></p></article>
+        <article class="model"><span class="model__tag" data-i18n="pm2.tag"></span><h4 class="model__t" data-i18n="pm2.t"></h4><p class="model__d" data-i18n="pm2.d"></p></article>
+        <article class="model"><span class="model__tag" data-i18n="pm3.tag"></span><h4 class="model__t" data-i18n="pm3.t"></h4><p class="model__d" data-i18n="pm3.d"></p></article>
+        <article class="model"><span class="model__tag" data-i18n="pm4.tag"></span><h4 class="model__t" data-i18n="pm4.t"></h4><p class="model__d" data-i18n="pm4.d"></p></article>
+      </div>
+
+      <div class="partners__grid">
+        <div class="partners__col">
+          <h3 class="subhead" data-i18n="pp.title"></h3>
+          <ol class="process">
+            <li><span class="process__no">1</span><div><p class="process__t" data-i18n="pp1.t"></p><p class="process__d" data-i18n="pp1.d"></p></div></li>
+            <li><span class="process__no">2</span><div><p class="process__t" data-i18n="pp2.t"></p><p class="process__d" data-i18n="pp2.d"></p></div></li>
+            <li><span class="process__no">3</span><div><p class="process__t" data-i18n="pp3.t"></p><p class="process__d" data-i18n="pp3.d"></p></div></li>
+            <li><span class="process__no">4</span><div><p class="process__t" data-i18n="pp4.t"></p><p class="process__d" data-i18n="pp4.d"></p></div></li>
+            <li><span class="process__no">5</span><div><p class="process__t" data-i18n="pp5.t"></p><p class="process__d" data-i18n="pp5.d"></p></div></li>
+          </ol>
+        </div>
+        <div class="partners__col">
+          <h3 class="subhead" data-i18n="ps.title"></h3>
+          <ul class="standards">
+            <li data-i18n="ps1"></li>
+            <li data-i18n="ps2"></li>
+            <li data-i18n="ps3"></li>
+            <li data-i18n="ps4"></li>
+            <li data-i18n="ps5"></li>
+          </ul>
+          <h3 class="minihead" data-i18n="partners.progTitle"></h3>
+          <ul class="progs">
+            <li data-i18n="prog1"></li>
+            <li data-i18n="prog2"></li>
+            <li data-i18n="prog3"></li>
+            <li data-i18n="prog4"></li>
+            <li data-i18n="prog5"></li>
+            <li data-i18n="prog6"></li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="event">
+        <div class="frame frame--wide is-loading">
+          <img src="assets/img/leadership-seminar.jpg" width="1536" height="1024" loading="lazy" data-i18n-attr="alt:cap.leadership">
+          <div class="event__card glass glass--refract">
+            <p class="event__k" data-i18n="partners.event.k"></p>
+            <p class="event__t display" data-i18n="partners.event.t"></p>
+            <p class="event__d" data-i18n="partners.event.d"></p>
+            <button class="btn btn--ink btn--sm" type="button" data-open-inquiry data-role="school" data-i18n="partners.cta"></button>
+          </div>
+        </div>
+        <figcaption class="cap"><span class="cap__no" data-fig="09"></span> <span data-i18n="cap.leadership"></span> <span class="cap__credit" data-i18n="credit.staged"></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Journal -->
+  <section class="sec journal" id="journal" aria-labelledby="journalTitle">
+    <div class="wrap">
+      <header class="sec__head">
+        <p class="kicker" data-i18n="journal.kicker"></p>
+        <h2 class="sec__title display" id="journalTitle" data-i18n-html="journal.title"></h2>
+        <p class="sec__deck" data-i18n="journal.deck"></p>
+      </header>
+      <div class="journal__grid">
+        <article class="jcard jcard--lead">
+          <button class="jcard__btn" type="button" data-article="a1" aria-controls="articleDrawer">
+            <span class="frame frame--4x3 is-loading"><img src="assets/img/departure.jpg" alt="" width="1024" height="1536" loading="lazy"></span>
+            <span class="jcard__body">
+              <span class="jcard__k" data-i18n="a1.k"></span>
+              <span class="jcard__t display" data-i18n="a1.t"></span>
+              <span class="jcard__d" data-i18n="a1.d"></span>
+              <span class="jcard__meta"><span data-i18n="journal.by"></span> · <span data-min="3"></span></span>
+            </span>
+          </button>
+        </article>
+        <article class="jcard">
+          <button class="jcard__btn" type="button" data-article="a2" aria-controls="articleDrawer">
+            <span class="frame frame--3x2 is-loading"><img src="assets/img/medical-skills.jpg" alt="" width="1536" height="1024" loading="lazy"></span>
+            <span class="jcard__body">
+              <span class="jcard__k" data-i18n="a2.k"></span>
+              <span class="jcard__t display" data-i18n="a2.t"></span>
+              <span class="jcard__d" data-i18n="a2.d"></span>
+              <span class="jcard__meta"><span data-i18n="journal.by"></span> · <span data-min="3"></span></span>
+            </span>
+          </button>
+        </article>
+        <article class="jcard">
+          <button class="jcard__btn" type="button" data-article="a3" aria-controls="articleDrawer">
+            <span class="frame frame--3x2 is-loading"><img src="assets/img/cebu-family.jpg" alt="" width="1536" height="1024" loading="lazy"></span>
+            <span class="jcard__body">
+              <span class="jcard__k" data-i18n="a3.k"></span>
+              <span class="jcard__t display" data-i18n="a3.t"></span>
+              <span class="jcard__d" data-i18n="a3.d"></span>
+              <span class="jcard__meta"><span data-i18n="journal.by"></span> · <span data-min="3"></span></span>
+            </span>
+          </button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec faq" id="faq" aria-labelledby="faqTitle">
+    <div class="wrap faq__wrap">
+      <header class="faq__head">
+        <p class="kicker" data-i18n="faq.kicker"></p>
+        <h2 class="sec__title display" id="faqTitle" data-i18n="faq.title"></h2>
+      </header>
+      <div class="faq__body">
+        <div class="tabs" role="tablist" data-i18n-attr="aria-label:faq.title">
+          <button class="tab" role="tab" type="button" id="tabParents" aria-selected="true" aria-controls="faqParents" data-i18n="faq.tabParents"></button>
+          <button class="tab" role="tab" type="button" id="tabPartners" aria-selected="false" aria-controls="faqPartners" tabindex="-1" data-i18n="faq.tabPartners"></button>
+        </div>
+        <div class="tabpanel" id="faqParents" role="tabpanel" aria-labelledby="tabParents">
+          <div class="accordion" data-accordion>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq1b" aria-expanded="false" aria-controls="fq1"><span data-i18n="fq1.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq1" role="region" aria-labelledby="fq1b"><div class="acc__inner"><p data-i18n="fq1.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq2b" aria-expanded="false" aria-controls="fq2"><span data-i18n="fq2.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq2" role="region" aria-labelledby="fq2b"><div class="acc__inner"><p data-i18n="fq2.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq3b" aria-expanded="false" aria-controls="fq3"><span data-i18n="fq3.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq3" role="region" aria-labelledby="fq3b"><div class="acc__inner"><p data-i18n="fq3.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq4b" aria-expanded="false" aria-controls="fq4"><span data-i18n="fq4.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq4" role="region" aria-labelledby="fq4b"><div class="acc__inner"><p data-i18n="fq4.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq5b" aria-expanded="false" aria-controls="fq5"><span data-i18n="fq5.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq5" role="region" aria-labelledby="fq5b"><div class="acc__inner"><p data-i18n="fq5.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fq6b" aria-expanded="false" aria-controls="fq6"><span data-i18n="fq6.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fq6" role="region" aria-labelledby="fq6b"><div class="acc__inner"><p data-i18n="fq6.a"></p></div></div></div>
+          </div>
+        </div>
+        <div class="tabpanel" id="faqPartners" role="tabpanel" aria-labelledby="tabPartners" hidden>
+          <div class="accordion" data-accordion>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp1b" aria-expanded="false" aria-controls="fp1"><span data-i18n="fp1.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp1" role="region" aria-labelledby="fp1b"><div class="acc__inner"><p data-i18n="fp1.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp2b" aria-expanded="false" aria-controls="fp2"><span data-i18n="fp2.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp2" role="region" aria-labelledby="fp2b"><div class="acc__inner"><p data-i18n="fp2.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp3b" aria-expanded="false" aria-controls="fp3"><span data-i18n="fp3.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp3" role="region" aria-labelledby="fp3b"><div class="acc__inner"><p data-i18n="fp3.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp4b" aria-expanded="false" aria-controls="fp4"><span data-i18n="fp4.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp4" role="region" aria-labelledby="fp4b"><div class="acc__inner"><p data-i18n="fp4.a"></p></div></div></div>
+            <div class="acc"><h3 class="acc__h"><button class="acc__btn" type="button" id="fp5b" aria-expanded="false" aria-controls="fp5"><span data-i18n="fp5.q"></span><span class="acc__icon" aria-hidden="true"></span></button></h3><div class="acc__panel" id="fp5" role="region" aria-labelledby="fp5b"><div class="acc__inner"><p data-i18n="fp5.a"></p></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact (yellow) -->
   <section class="contact" id="contact" aria-labelledby="contactTitle">
     <div class="wrap contact__grid">
       <div class="contact__lead">
-        <p class="sec__label"><span class="sec__kicker" data-i18n="contact.kicker"></span></p>
+        <p class="kicker" data-i18n="contact.kicker"></p>
         <h2 class="contact__title display" id="contactTitle" data-i18n-html="contact.title"></h2>
-        <p class="deck" data-i18n="contact.deck"></p>
+        <p class="contact__deck" data-i18n="contact.deck"></p>
         <button class="btn btn--ink btn--lg" type="button" data-open-inquiry data-i18n="contact.form"></button>
       </div>
       <dl class="contact__list">
-        <div class="contact__row"><dt class="mono" data-i18n="contact.email"></dt><dd><span class="contact__v">biglinkerkor@gmail.com</span><button class="copybtn" type="button" data-copy="biglinkerkor@gmail.com" data-i18n="contact.copy"></button></dd></div>
-        <div class="contact__row"><dt class="mono" data-i18n="contact.phone"></dt><dd><span class="contact__v">+82 2 2039 8584</span><button class="copybtn" type="button" data-copy="+82 2 2039 8584" data-i18n="contact.copy"></button></dd></div>
-        <div class="contact__row"><dt class="mono" data-i18n="contact.kakao"></dt><dd><span class="contact__v contact__v--sm" data-i18n="contact.kakaoV"></span></dd></div>
-        <div class="contact__row"><dt class="mono" data-i18n="contact.offices"></dt><dd class="offices">
+        <div class="contact__row"><dt data-i18n="contact.email"></dt><dd><span class="contact__v">biglinkerkor@gmail.com</span><button class="copybtn" type="button" data-copy="biglinkerkor@gmail.com" data-i18n="contact.copy"></button></dd></div>
+        <div class="contact__row"><dt data-i18n="contact.phone"></dt><dd><span class="contact__v">+82 2 2039 8584</span><button class="copybtn" type="button" data-copy="+82 2 2039 8584" data-i18n="contact.copy"></button></dd></div>
+        <div class="contact__row"><dt data-i18n="contact.kakao"></dt><dd><span class="contact__v contact__v--sm" data-i18n="contact.kakaoV"></span></dd></div>
+        <div class="contact__row"><dt data-i18n="contact.offices"></dt><dd class="offices">
           <p><strong data-i18n="office.gangnam.t"></strong> <span data-i18n="office.gangnam.v"></span></p>
           <p><strong data-i18n="office.gasan.t"></strong> <span data-i18n="office.gasan.v"></span></p>
         </dd></div>
@@ -453,29 +515,29 @@
 
 <footer class="foot">
   <div class="wrap">
-    <p class="foot__mark display" aria-hidden="true">BigLinker <em>Camps</em></p>
+    <p class="foot__mark" aria-hidden="true">BigLinker <em>Camps</em></p>
     <div class="foot__grid">
       <p class="foot__about" data-i18n="footer.about"></p>
       <div>
-        <h2 class="foot__h mono" data-i18n="footer.links"></h2>
+        <h2 class="foot__h" data-i18n="footer.links"></h2>
         <ul class="foot__links">
           <li><a href="https://gobiglinker.com" target="_blank" rel="noopener" data-i18n="footer.site"></a></li>
           <li><a href="https://transfer.gobiglinker.com/en" target="_blank" rel="noopener" data-i18n="footer.transfer"></a></li>
         </ul>
       </div>
       <div>
-        <h2 class="foot__h mono" data-i18n="footer.lang"></h2>
+        <h2 class="foot__h" data-i18n="footer.lang"></h2>
         <ul class="foot__langs" id="footLangs"></ul>
       </div>
     </div>
     <p class="foot__img" data-i18n="footer.img"></p>
-    <div class="foot__bottom mono"><span data-i18n="footer.copy"></span><a href="#top" data-i18n="footer.top"></a></div>
+    <div class="foot__bottom"><span data-i18n="footer.copy"></span><a href="#top" data-i18n="footer.top"></a></div>
   </div>
 </footer>
 
 <!-- Compare tray -->
 <aside class="tray glass glass--refract" id="tray" data-i18n-attr="aria-label:compare.tray" hidden>
-  <p class="tray__label"><span data-i18n="compare.tray"></span> <span class="mono" id="trayCount">0/3</span></p>
+  <p class="tray__label"><span data-i18n="compare.tray"></span> <span id="trayCount">0/3</span></p>
   <ul class="tray__items" id="trayItems"></ul>
   <div class="tray__actions">
     <button class="linkbtn" type="button" id="trayClear" data-i18n="compare.clear"></button>
@@ -504,7 +566,7 @@
     <a href="#faq" data-i18n="nav.faq"></a>
   </nav>
   <div class="drawer__langs">
-    <p class="mono" data-i18n="footer.lang"></p>
+    <p data-i18n="footer.lang"></p>
     <ul class="langlist" id="drawerLangs"></ul>
   </div>
   <button class="btn btn--ink btn--block" type="button" data-open-inquiry data-i18n="nav.cta"></button>
@@ -581,6 +643,7 @@
 <div class="toasts" id="toasts" aria-live="polite"></div>
 
 <script src="assets/data.js" defer></script>
+<script src="assets/worldmap.js" defer></script>
 <script src="i18n/ko.js" defer></script>
 <script src="assets/app.js" defer></script>
 </body>

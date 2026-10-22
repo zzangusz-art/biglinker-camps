@@ -3,3 +3,4 @@ project.md
 artifact.html
 __pycache__/
 .claude/
+i18n/delta/

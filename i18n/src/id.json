@@ -2,7 +2,6 @@
   "meta.title": "BigLinker Camps",
   "meta.description": "Kamp yang dirancang, direkrut pesertanya, dan dijalankan oleh BigLinker, konsultan pendidikan di Seoul. Bandingkan kamp luar negeri untuk pelajar Korea, atau ikuti program singkat di Korea.",
   "lang.name": "Bahasa Indonesia",
-
   "nav.skip": "Langsung ke konten",
   "nav.lab": "Cari kamp",
   "nav.feature": "Dari lapangan",
@@ -15,42 +14,17 @@
   "nav.menu": "Menu",
   "nav.close": "Tutup",
   "nav.lang": "Pilih bahasa",
-
   "fig": "Gbr.",
   "credit.real": "Foto: BigLinker",
   "credit.staged": "Gambar ilustrasi",
   "example": "Contoh",
-
-  "hero.issue": "Edisi Musim 2027",
-  "hero.place": "Seoul",
   "hero.title": "Korea,<br>dua arah.",
   "hero.deck": "BigLinker, konsultan pendidikan di Seoul, memilihkan kamp luar negeri untuk pelajar Korea, mempersiapkan mereka, dan berangkat bersama mereka. Bagi pelajar internasional yang datang ke Korea, kami merancang dua minggu di Seoul.",
-  "hero.ctaParents": "Cari kamp luar negeri",
-  "hero.ctaParentsSub": "Keluarga Korea · pelajar",
   "hero.ctaKorea": "Datang ke Korea",
-  "hero.ctaKoreaSub": "Pelajar internasional · sekolah",
-  "hero.badge": "Rekam jejak · K-POP Creative Summer",
   "hero.caption": "Peserta K-POP Creative Summer di Seoul. Pelajar dari berbagai negara menghabiskan dua minggu untuk menyiapkan satu panggung yang sama.",
-
-  "toc.title": "Dalam edisi ini",
-  "toc.1": "Lab Kamp",
-  "toc.1d": "Empat belas kamp luar negeri, dipilih menurut kebutuhan Anda",
-  "toc.2": "Dua minggu di Seoul",
-  "toc.2d": "Di balik K-POP Creative Summer",
-  "toc.3": "Kamp di Korea",
-  "toc.3d": "Program singkat untuk pelajar internasional",
-  "toc.4": "Cara kami menjalankan kamp",
-  "toc.4d": "Dari telepon pertama hingga penerbangan pulang",
-  "toc.5": "Untuk lembaga penyelenggara",
-  "toc.5d": "Merekrut dan mendampingi pelajar Korea",
-  "toc.6": "Jurnal",
-  "toc.6d": "Tiga tulisan untuk dibaca sebelum mendaftar",
-  "toc.7": "Pertanyaan dan konsultasi",
-  "toc.7d": "Konsultasi gratis",
-
   "lab.kicker": "Lab Kamp",
-  "lab.title": "Tentukan kriteria Anda.<br>Hanya kamp yang cocok yang tersisa.",
-  "lab.deck": "Mulai dari kamp bahasa Inggris yang diikuti seluruh keluarga, bersekolah sementara di sekolah setempat, kamp pengenalan kedokteran dan farmasi, hingga summer school universitas. Pilih jenjang kelas anak, lama tinggal, dan wilayah untuk melihat kamp yang sesuai, lalu bandingkan hingga tiga kamp secara berdampingan.",
+  "lab.title": "Mulai dengan cek kecocokan.<br>Lalu bandingkan.",
+  "lab.deck": "Jawab beberapa pertanyaan, lalu Lab Kamp akan menyarankan kamp yang sesuai dengan jenjang kelas, minat, dan negara pilihan anak Anda, lengkap dengan alasan di balik setiap pilihan. Anda juga dapat menyaring sendiri daftar lengkap kamp dan membandingkan hingga tiga kamp.",
   "lab.quick": "Untuk siapa kamp ini?",
   "quick.family.t": "Kamp bahasa Inggris bersama Ayah dan Ibu",
   "quick.family.d": "Orang tua ikut · umumnya anak SD",
@@ -64,7 +38,6 @@
   "quick.summer.d": "Siswa SMA dan mahasiswa",
   "quick.stem.t": "AI, coding, dan STEM",
   "quick.stem.d": "Buat, lalu presentasikan",
-
   "f.cat": "Jenis",
   "f.age": "Usia",
   "f.with": "Pendamping",
@@ -78,7 +51,6 @@
   "f.title": "Filter",
   "f.count": "{n} kamp",
   "f.remove": "Hapus filter ini",
-
   "cat.english": "Bahasa Inggris",
   "cat.schooling": "Sekolah lokal",
   "cat.activity": "Aktivitas",
@@ -108,33 +80,25 @@
   "sort.cost": "Biaya terendah",
   "sort.study": "Porsi belajar terbanyak",
   "sort.act": "Porsi aktivitas terbanyak",
-
   "lab.notice": "Kamp yang ditampilkan di sini adalah contoh untuk menunjukkan cara kami mengelompokkan dan membandingkan program. Kisaran biaya bersifat perkiraan dan belum termasuk tiket pesawat. Penyelenggara, tanggal, dan biaya yang sebenarnya kami pastikan saat konsultasi.",
   "lab.noticeLabel": "Catatan",
   "lab.empty.t": "Tidak ada kamp yang sesuai dengan filter ini",
   "lab.empty.d": "Coba hapus filter satu per satu. Jika kamp yang Anda cari tidak ada dalam daftar, sampaikan kepada kami saat konsultasi.",
   "lab.loading": "Memuat kamp",
-
   "card.weeks": "{n} mgg",
-  "card.study": "Belajar",
-  "card.act": "Aktivitas",
   "card.more": "Lihat detail",
   "card.add": "Tambahkan ke perbandingan",
   "card.added": "Ditambahkan ke perbandingan",
-
   "cost.1": "Di bawah ₩3 juta",
   "cost.2": "₩3–6 juta",
   "cost.3": "Di atas ₩6 juta",
-
   "spec.target": "Usia",
   "spec.with": "Pendamping",
   "spec.len": "Durasi",
   "spec.stay": "Akomodasi",
   "spec.cost": "Kisaran biaya",
   "spec.care": "Pendampingan di lokasi",
-  "spec.ratio": "Belajar : aktivitas",
   "spec.region": "Wilayah",
-
   "modal.day": "Contoh jadwal sehari",
   "modal.inc": "Termasuk",
   "modal.exc": "Tidak termasuk",
@@ -144,10 +108,18 @@
   "modal.cta": "Tanyakan tentang kamp ini",
   "modal.close": "Tutup",
   "modal.add": "Tambahkan ke perbandingan",
-
-  "prep.abroad": ["Pastikan paspor masih berlaku setidaknya enam bulan setelah tanggal kepulangan", "Periksa dan ajukan visa atau izin perjalanan elektronik bila diperlukan", "Siapkan asuransi perjalanan", "Siapkan informasi kesehatan dan keterangan obat dalam bahasa Inggris", "Ikuti orientasi pra-keberangkatan"],
-  "prep.domestic": ["Siapkan informasi kesehatan dan keterangan obat", "Siapkan asuransi perjalanan", "Ikuti orientasi sebelum kamp"],
-
+  "prep.abroad": [
+    "Pastikan paspor masih berlaku setidaknya enam bulan setelah tanggal kepulangan",
+    "Periksa dan ajukan visa atau izin perjalanan elektronik bila diperlukan",
+    "Siapkan asuransi perjalanan",
+    "Siapkan informasi kesehatan dan keterangan obat dalam bahasa Inggris",
+    "Ikuti orientasi pra-keberangkatan"
+  ],
+  "prep.domestic": [
+    "Siapkan informasi kesehatan dan keterangan obat",
+    "Siapkan asuransi perjalanan",
+    "Ikuti orientasi sebelum kamp"
+  ],
   "compare.tray": "Bandingkan",
   "compare.hint": "Maks. 3",
   "compare.open": "Bandingkan berdampingan",
@@ -157,7 +129,6 @@
   "compare.cta": "Tanyakan tentang kamp-kamp ini",
   "compare.remove": "Hapus",
   "compare.summary": "Ringkasan",
-
   "toast.added": "Ditambahkan ke perbandingan · {name}",
   "toast.removed": "Dihapus dari perbandingan",
   "toast.full": "Anda dapat membandingkan hingga tiga kamp. Hapus satu untuk menambahkan yang lain.",
@@ -169,7 +140,6 @@
   "toast.quick": "Menampilkan: {name}",
   "toast.prepared": "Pesan Anda siap dikirim",
   "toast.close": "Tutup",
-
   "feature.kicker": "Dari lapangan · Rekam jejak",
   "feature.title": "Dua minggu di Seoul",
   "feature.sub": "K-POP Creative Summer",
@@ -201,7 +171,6 @@
   "cap.dance": "Kelas koreografi K-pop di studio tari.",
   "cap.broadcast": "Ruang kontrol siaran, tempat gambar dari beberapa kamera berkumpul menjadi satu.",
   "cap.forest": "Seoul Forest. Usai kelas, para peserta berkumpul di atas rumput.",
-
   "korea.kicker": "Dunia → Korea",
   "korea.title": "Kamp<br>di Korea",
   "korea.deck": "Program singkat di Korea untuk pelajar internasional. Tidak perlu bisa berbahasa Korea. Kami menerima peserta perorangan maupun rombongan sekolah; program rombongan disusun mengikuti jadwal, usia, dan tujuan sekolah Anda.",
@@ -219,7 +188,6 @@
   "korea.p6.d": "Piknik di tepi Sungai Han, acara budaya, dan waktu bersama pelajar setempat.",
   "korea.note": "Program dipastikan berjalan setelah jumlah peserta mencukupi. Sekolah, agen, dan universitas semuanya kami sambut.",
   "korea.cta": "Pertanyaan rombongan dan perorangan",
-
   "how.kicker": "Cara kami bekerja",
   "how.title": "Dari konsultasi pertama hingga pulang,<br>satu tim.",
   "how.deck": "BigLinker adalah konsultan pendidikan yang telah memberikan lebih dari 2.800 sesi bimbingan privat untuk seleksi masuk, pindah kuliah, pascasarjana, dan karier. Kami menjalankan kamp dengan cara yang sama: kami memastikan dulu bahwa kamp itu cocok untuk anak, dan tidak merekomendasikan kamp yang tidak cocok.",
@@ -238,7 +206,6 @@
   "step6.d": "Kami mengumpulkan umpan balik dan sertifikat, lalu membicarakan langkah berikutnya. Belajar bahasa, rencana karier, atau persiapan seleksi masuk dapat dilanjutkan dengan bimbingan BigLinker.",
   "cap.prep": "Disiapkan sebelum berangkat: paspor, kartu kontak darurat, dan buku panduan, disimpan bersama.",
   "cap.departure": "Di bandara pada hari keberangkatan. Seorang staf melakukan pemeriksaan terakhir atas nama dan dokumen peserta.",
-
   "pr.title": "Lima prinsip",
   "pr1.t": "Kami tidak merekomendasikan kamp yang tidak cocok.",
   "pr1.d": "Kamp yang tepat bagi anak lebih utama daripada kamp yang populer.",
@@ -250,7 +217,6 @@
   "pr4.d": "Kamp karier dan summer school tidak menjamin penerimaan atau nilai. Kami menyajikannya sebagai kesempatan untuk menjelajahi minat dan bersiap.",
   "pr5.t": "Standar keselamatan didahulukan.",
   "pr5.d": "Kami memeriksa sistem perlindungan anak, akomodasi, transportasi, dan prosedur darurat setiap penyelenggara sebelum merekomendasikannya.",
-
   "safety.title": "Keselamatan dan perlindungan anak",
   "safety.q1": "Melindungi peserta di bawah 18 tahun",
   "safety.a1": "Kami mengumpulkan persetujuan orang tua serta informasi kesehatan dan alergi sebelum keberangkatan, dan meninjau kebijakan perlindungan anak serta standar staf setiap penyelenggara.",
@@ -262,7 +228,6 @@
   "safety.a4": "Kami memastikan asuransi perjalanan, menjelaskan cara menggunakan layanan kesehatan setempat, dan membantu keluarga menyiapkan keterangan resep dalam bahasa Inggris untuk obat yang rutin diminum.",
   "safety.q5": "Data pribadi",
   "safety.a5": "Kami hanya meminta data yang dibutuhkan untuk konsultasi dan pendaftaran, dan hanya membagikan kepada penyelenggara data yang diperlukan untuk pendaftaran.",
-
   "stats.title": "BigLinker dalam angka",
   "stat1.k": "Sesi bimbingan privat",
   "stat1.d": "Seleksi masuk · pindah kuliah · pascasarjana · karier",
@@ -273,26 +238,9 @@
   "stat4.k": "Menyelenggarakan kamp budaya K-POP",
   "stat4.d": "Kemitraan dengan K-POP Academy UK",
   "stats.src": "Sumber: gobiglinker.com dan catatan internal (Oktober 2026). Angka ini mencerminkan bimbingan dan pelatihan yang diberikan di Korea, bukan jumlah pelajar yang dikirim ke kamp luar negeri.",
-
-  "partners.kicker": "Korea → Dunia · Untuk lembaga",
-  "partners.title": "Pelajar Korea<br>untuk program Anda",
-  "partners.deck": "Kami merekrut, mempersiapkan, dan mendampingi perjalanan pelajar Korea yang mengikuti kamp, summer school, dan program karier di luar negeri.",
-  "partners.flowTitle": "Cara kerjanya",
-  "flow1.t": "Rekrutmen",
-  "flow1.d": "Kami berpromosi dalam bahasa Korea dan memberikan konsultasi kepada keluarga.",
-  "flow2.t": "Persiapan",
-  "flow2.d": "Orientasi, dokumen, dan pembekalan pra-keberangkatan.",
-  "flow3.t": "Pendampingan",
-  "flow3.d": "Staf kami berangkat bersama rombongan dan selalu siap dihubungi.",
-  "flow4.t": "Tindak lanjut",
-  "flow4.d": "Umpan balik, sertifikat, dan langkah berikutnya.",
-  "partners.terms.k": "Ketentuan",
-  "partners.terms.v": "Tanpa biaya di muka. Komisi hanya berlaku untuk pelajar yang benar-benar mendaftar.",
-  "partners.getTitle": "Yang diperoleh mitra",
-  "get1": "Kami memeriksa kesiapan akademik, bahasa Inggris, dan wawancara setiap pelajar sebelum merekomendasikannya.",
-  "get2": "Pemeriksaan dokumen berbasis AI kami mengurangi pendaftaran yang tidak lengkap atau tidak memenuhi syarat.",
-  "get3": "Sesi informasi dan kamp dapat diselenggarakan bersama di Korea.",
-  "get4": "BigLinker menangani konsultasi orang tua dan seluruh komunikasi dalam bahasa Korea.",
+  "partners.kicker": "Kemitraan kelembagaan",
+  "partners.title": "Kemitraan dengan<br>lembaga di luar negeri",
+  "partners.deck": "BigLinker bekerja sama secara kontraktual dengan sekolah, universitas, dan penyelenggara kamp di luar negeri, serta menangani pelajar Korea mulai dari rekrutmen dan keberangkatan hingga tindak lanjut. Program di Korea untuk pelajar internasional dijalankan langsung oleh tim kami di Seoul. Setiap kemitraan diawali dengan perjanjian tertulis dan peninjauan standar perlindungan anak.",
   "partners.progTitle": "Program yang kami cari",
   "prog1": "Kamp kedokteran dan farmasi",
   "prog2": "Summer school universitas",
@@ -305,7 +253,6 @@
   "partners.event.d": "2–3 November, Berlin. Kedua co-CEO BigLinker akan bertemu langsung dengan lembaga-lembaga di lokasi.",
   "partners.cta": "Pertanyaan kemitraan",
   "cap.leadership": "Ruang seminar di tengah diskusi.",
-
   "journal.kicker": "Jurnal",
   "journal.title": "Layak dibaca<br>sebelum mendaftar",
   "journal.deck": "Tiga pertanyaan yang paling sering diajukan dalam konsultasi.",
@@ -345,7 +292,6 @@
     "<strong>Staf di lokasi.</strong> Cari tahu apakah ada manajer berbahasa Korea yang bertugas di lokasi, dan kapan ia bisa dihubungi.",
     "<strong>Biaya keseluruhan.</strong> Tambahkan tiket pesawat, akomodasi orang tua, makan, transportasi lokal, dan asuransi ke biaya kamp untuk melihat anggaran yang sebenarnya. Saat membandingkan kamp, hitung setiap pilihan dengan dasar yang sama."
   ],
-
   "faq.kicker": "FAQ",
   "faq.title": "Pertanyaan yang sering diajukan",
   "faq.tabParents": "Keluarga · pelajar",
@@ -372,7 +318,6 @@
   "fp4.a": "Sekolah, universitas, penyelenggara kamp, lembaga kursus bahasa, dan agen di luar negeri. Untuk program dengan peserta di bawah 18 tahun, kami meninjau standar perlindungan anak dan staf terlebih dahulu.",
   "fp5.q": "Dalam bahasa apa kami bisa menghubungi Anda?",
   "fp5.a": "Bahasa Inggris atau Korea. Silakan gunakan email atau WhatsApp (+82 2 2039 8584).",
-
   "contact.kicker": "Hubungi kami",
   "contact.title": "Kami ingin mendengar<br>cerita Anda lebih dulu.",
   "contact.deck": "Beri tahu kami apakah Anda pelajar, orang tua, sekolah, atau agen, dan kamp mana yang menarik minat Anda. Kami akan membalas dengan jadwal, biaya, dan langkah berikutnya. Konsultasi gratis.",
@@ -387,7 +332,6 @@
   "office.gangnam.v": "6F, 602 Yeongdong-daero, Gangnam-gu, Seoul",
   "office.gasan.t": "Gasan",
   "office.gasan.v": "B-1901, 32 Digital-ro 9-gil, Geumcheon-gu, Seoul",
-
   "form.title": "Formulir pertanyaan",
   "form.deck": "Jawaban Anda akan kami rangkum menjadi satu pesan yang siap dikirim. Setelah itu, kirimkan kepada kami melalui email atau KakaoTalk.",
   "form.role": "Mana yang paling sesuai dengan Anda?",
@@ -421,7 +365,6 @@
   "form.edit": "Ubah",
   "form.subject": "[BigLinker Camps] Pertanyaan",
   "form.optional": "Opsional",
-
   "footer.about": "BigLinker Camps dirancang dan dijalankan oleh BigLinker Co., Ltd., konsultan pendidikan di Seoul yang menawarkan bimbingan seleksi masuk, pindah kuliah, pascasarjana, dan karier, pelatihan korporat, serta dukungan studi ke luar negeri.",
   "footer.img": "Tentang gambar · Foto K-POP Creative Summer berasal dari program yang sebenarnya. Foto lain yang digunakan untuk contoh kamp dan proses kerja kami adalah gambar ilustrasi hasil peragaan, ditampilkan untuk memperjelas.",
   "footer.links": "Tautan",
@@ -430,130 +373,680 @@
   "footer.lang": "Bahasa",
   "footer.top": "Kembali ke atas",
   "footer.copy": "© 2026 BigLinker Co., Ltd. Seoul",
-
   "camp.cebu.t": "Kamp bahasa Inggris keluarga",
   "camp.cebu.p": "Cebu, Filipina",
   "camp.cebu.s": "Suite keluarga di resor",
   "camp.cebu.c": "Manajer Korea di lokasi",
   "camp.cebu.d": "Pada pagi hari, anak mengikuti pelajaran bahasa Inggris privat dan kelompok kecil, lalu berkegiatan pada sore hari. Orang tua menginap di akomodasi yang sama dan dapat mengikuti kelas bahasa Inggris dewasa jika berminat.",
-  "camp.cebu.day": [["08:30", "Pelajaran privat sesuai tingkat"], ["10:30", "Kelas berbicara kelompok kecil"], ["12:30", "Makan siang dan istirahat"], ["14:00", "Renang, seni, dan kegiatan lain"], ["17:00", "Waktu keluarga"]],
-  "camp.cebu.inc": ["Biaya kursus dan materi", "Akomodasi keluarga", "Penjemputan di bandara setempat", "Kegiatan hari kerja"],
-  "camp.cebu.exc": ["Tiket pesawat pulang-pergi", "Kelas dewasa untuk orang tua (opsional)", "Tur akhir pekan", "Asuransi perjalanan"],
-
+  "camp.cebu.day": [
+    [
+      "08:30",
+      "Pelajaran privat sesuai tingkat"
+    ],
+    [
+      "10:30",
+      "Kelas berbicara kelompok kecil"
+    ],
+    [
+      "12:30",
+      "Makan siang dan istirahat"
+    ],
+    [
+      "14:00",
+      "Renang, seni, dan kegiatan lain"
+    ],
+    [
+      "17:00",
+      "Waktu keluarga"
+    ]
+  ],
+  "camp.cebu.inc": [
+    "Biaya kursus dan materi",
+    "Akomodasi keluarga",
+    "Penjemputan di bandara setempat",
+    "Kegiatan hari kerja"
+  ],
+  "camp.cebu.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Kelas dewasa untuk orang tua (opsional)",
+    "Tur akhir pekan",
+    "Asuransi perjalanan"
+  ],
   "camp.johor.t": "Bersekolah di sekolah internasional, Malaysia",
   "camp.johor.p": "Johor Bahru, Malaysia",
   "camp.johor.s": "Kondominium keluarga",
   "camp.johor.c": "Koordinator lokal berbahasa Korea",
   "camp.johor.d": "Anak mengikuti kelas reguler di sekolah internasional bersama pelajar setempat. Orang tua tinggal di kondominium dekat sekolah dan mengantar-jemput anak.",
-  "camp.johor.day": [["07:40", "Tiba di sekolah"], ["08:00", "Pelajaran reguler (bahasa Inggris, matematika, sains)"], ["12:00", "Makan siang di sekolah"], ["13:00", "Pelajaran sore dan ekstrakurikuler"], ["15:30", "Pulang sekolah dan pendampingan PR"]],
-  "camp.johor.inc": ["Biaya sekolah internasional", "Pengurusan dokumen penerimaan", "Menginap di kondominium", "Dukungan koordinator lokal"],
-  "camp.johor.exc": ["Tiket pesawat pulang-pergi", "Seragam dan makan siang sekolah", "Biaya hidup", "Asuransi perjalanan"],
-
+  "camp.johor.day": [
+    [
+      "07:40",
+      "Tiba di sekolah"
+    ],
+    [
+      "08:00",
+      "Pelajaran reguler (bahasa Inggris, matematika, sains)"
+    ],
+    [
+      "12:00",
+      "Makan siang di sekolah"
+    ],
+    [
+      "13:00",
+      "Pelajaran sore dan ekstrakurikuler"
+    ],
+    [
+      "15:30",
+      "Pulang sekolah dan pendampingan PR"
+    ]
+  ],
+  "camp.johor.inc": [
+    "Biaya sekolah internasional",
+    "Pengurusan dokumen penerimaan",
+    "Menginap di kondominium",
+    "Dukungan koordinator lokal"
+  ],
+  "camp.johor.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Seragam dan makan siang sekolah",
+    "Biaya hidup",
+    "Asuransi perjalanan"
+  ],
   "camp.auckland.t": "Bersekolah di SD Selandia Baru",
   "camp.auckland.p": "Auckland, Selandia Baru",
   "camp.auckland.s": "Homestay",
   "camp.auckland.c": "Didampingi guru",
   "camp.auckland.d": "Anak bersekolah di SD setempat dan tinggal bersama keluarga homestay. Enam minggu sepenuhnya dalam lingkungan berbahasa Inggris.",
-  "camp.auckland.day": [["08:30", "Berjalan kaki ke sekolah dari homestay"], ["09:00", "Belajar bersama kelas setempat"], ["12:30", "Makan siang dan bermain di halaman"], ["15:00", "Pulang sekolah dan cek bersama guru"], ["18:00", "Makan malam bersama keluarga tuan rumah"]],
-  "camp.auckland.inc": ["Biaya sekolah", "Homestay (tiga kali makan sehari)", "Guru pendamping", "Kartu transportasi lokal"],
-  "camp.auckland.exc": ["Tiket pesawat pulang-pergi", "Uang saku", "Tur akhir pekan opsional", "Asuransi perjalanan"],
-
+  "camp.auckland.day": [
+    [
+      "08:30",
+      "Berjalan kaki ke sekolah dari homestay"
+    ],
+    [
+      "09:00",
+      "Belajar bersama kelas setempat"
+    ],
+    [
+      "12:30",
+      "Makan siang dan bermain di halaman"
+    ],
+    [
+      "15:00",
+      "Pulang sekolah dan cek bersama guru"
+    ],
+    [
+      "18:00",
+      "Makan malam bersama keluarga tuan rumah"
+    ]
+  ],
+  "camp.auckland.inc": [
+    "Biaya sekolah",
+    "Homestay (tiga kali makan sehari)",
+    "Guru pendamping",
+    "Kartu transportasi lokal"
+  ],
+  "camp.auckland.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Uang saku",
+    "Tur akhir pekan opsional",
+    "Asuransi perjalanan"
+  ],
   "camp.ukboarding.t": "Bahasa Inggris & aktivitas musim panas di sekolah asrama Inggris",
   "camp.ukboarding.p": "Inggris, Britania Raya",
   "camp.ukboarding.s": "Asrama sekolah",
   "camp.ukboarding.c": "Pemimpin rombongan dari Korea",
   "camp.ukboarding.d": "Pelajaran bahasa Inggris pada pagi hari, olahraga dan seni pada sore hari, serta perjalanan akhir pekan ke London dan Oxford. Pelajar tinggal di asrama bersama teman dari banyak negara.",
-  "camp.ukboarding.day": [["08:00", "Sarapan di asrama"], ["09:00", "Kelas bahasa Inggris (campuran berbagai negara)"], ["13:30", "Pilihan olahraga atau seni"], ["19:00", "Acara malam"], ["22:00", "Lampu dimatikan"]],
-  "camp.ukboarding.inc": ["Biaya kursus", "Asrama (tiga kali makan sehari)", "Dua kali wisata akhir pekan", "Antar-jemput bandara rombongan"],
-  "camp.ukboarding.exc": ["Tiket pesawat pulang-pergi", "Biaya ETA Inggris", "Aktivitas opsional", "Asuransi perjalanan"],
-
+  "camp.ukboarding.day": [
+    [
+      "08:00",
+      "Sarapan di asrama"
+    ],
+    [
+      "09:00",
+      "Kelas bahasa Inggris (campuran berbagai negara)"
+    ],
+    [
+      "13:30",
+      "Pilihan olahraga atau seni"
+    ],
+    [
+      "19:00",
+      "Acara malam"
+    ],
+    [
+      "22:00",
+      "Lampu dimatikan"
+    ]
+  ],
+  "camp.ukboarding.inc": [
+    "Biaya kursus",
+    "Asrama (tiga kali makan sehari)",
+    "Dua kali wisata akhir pekan",
+    "Antar-jemput bandara rombongan"
+  ],
+  "camp.ukboarding.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Biaya ETA Inggris",
+    "Aktivitas opsional",
+    "Asuransi perjalanan"
+  ],
   "camp.canada.t": "Kamp alam dan aktivitas di Kanada",
   "camp.canada.p": "Ontario, Kanada",
   "camp.canada.s": "Kabin perkemahan",
   "camp.canada.c": "Didampingi pemimpin rombongan",
   "camp.canada.d": "Berkano, mendaki, dan api unggun: hari-hari berpusat pada alam terbuka. Dengan menjalani keseharian dalam bahasa Inggris, anak-anak tumbuh lebih percaya diri.",
-  "camp.canada.day": [["07:30", "Bangun dan sarapan di tepi danau"], ["09:00", "Kano dan berenang"], ["13:00", "Mendaki dan keterampilan di hutan"], ["16:00", "Kegiatan tim per kabin"], ["20:00", "Api unggun"]],
-  "camp.canada.inc": ["Biaya kamp", "Menginap di kabin (tiga kali makan sehari)", "Sewa peralatan", "Pemimpin rombongan pendamping"],
-  "camp.canada.exc": ["Tiket pesawat pulang-pergi", "Biaya eTA Kanada", "Uang saku", "Asuransi perjalanan"],
-
+  "camp.canada.day": [
+    [
+      "07:30",
+      "Bangun dan sarapan di tepi danau"
+    ],
+    [
+      "09:00",
+      "Kano dan berenang"
+    ],
+    [
+      "13:00",
+      "Mendaki dan keterampilan di hutan"
+    ],
+    [
+      "16:00",
+      "Kegiatan tim per kabin"
+    ],
+    [
+      "20:00",
+      "Api unggun"
+    ]
+  ],
+  "camp.canada.inc": [
+    "Biaya kamp",
+    "Menginap di kabin (tiga kali makan sehari)",
+    "Sewa peralatan",
+    "Pemimpin rombongan pendamping"
+  ],
+  "camp.canada.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Biaya eTA Kanada",
+    "Uang saku",
+    "Asuransi perjalanan"
+  ],
   "camp.jeju.t": "Kamp imersi bahasa Inggris di Korea",
   "camp.jeju.p": "Jeju, Korea Selatan",
   "camp.jeju.s": "Resor",
   "camp.jeju.c": "Staf Korea",
   "camp.jeju.d": "Kamp satu minggu untuk menjalani keseharian dalam bahasa Inggris bersama guru penutur asli, tanpa perlu terbang ke luar negeri. Hari terakhir ditutup dengan presentasi untuk orang tua.",
-  "camp.jeju.day": [["08:30", "Pertemuan pagi dalam bahasa Inggris"], ["09:30", "Pelajaran dengan guru penutur asli"], ["13:30", "Proyek luar ruang di Jeju"], ["17:00", "Jurnal bahasa Inggris dan persiapan presentasi"], ["19:30", "Permainan tim"]],
-  "camp.jeju.inc": ["Biaya kursus", "Menginap di resor (tiga kali makan sehari)", "Transportasi lokal", "Presentasi keluarga pada hari terakhir"],
-  "camp.jeju.exc": ["Tiket pesawat pulang-pergi ke Jeju", "Uang saku", "Asuransi perjalanan"],
-
+  "camp.jeju.day": [
+    [
+      "08:30",
+      "Pertemuan pagi dalam bahasa Inggris"
+    ],
+    [
+      "09:30",
+      "Pelajaran dengan guru penutur asli"
+    ],
+    [
+      "13:30",
+      "Proyek luar ruang di Jeju"
+    ],
+    [
+      "17:00",
+      "Jurnal bahasa Inggris dan persiapan presentasi"
+    ],
+    [
+      "19:30",
+      "Permainan tim"
+    ]
+  ],
+  "camp.jeju.inc": [
+    "Biaya kursus",
+    "Menginap di resor (tiga kali makan sehari)",
+    "Transportasi lokal",
+    "Presentasi keluarga pada hari terakhir"
+  ],
+  "camp.jeju.exc": [
+    "Tiket pesawat pulang-pergi ke Jeju",
+    "Uang saku",
+    "Asuransi perjalanan"
+  ],
   "camp.ukmed.t": "Kamp pengenalan kedokteran di Inggris",
   "camp.ukmed.p": "London, Inggris",
   "camp.ukmed.s": "Asrama universitas",
   "camp.ukmed.c": "Didampingi pemimpin rombongan",
   "camp.ukmed.d": "Pelajar mengikuti kuliah kedokteran, berlatih keterampilan klinis di laboratorium simulasi, dan dibimbing oleh dokter praktik, sehingga sejak dini dapat melihat seperti apa kuliah kedokteran.",
-  "camp.ukmed.day": [["09:00", "Kuliah pengantar kedokteran"], ["11:00", "Praktikum keterampilan klinis (simulasi)"], ["14:00", "Sesi mentor bersama mahasiswa kedokteran"], ["16:00", "Lokakarya wawancara MMI"], ["19:00", "Jalan-jalan malam di London"]],
-  "camp.ukmed.inc": ["Biaya program", "Asrama universitas", "Bahan praktikum", "Sertifikat penyelesaian"],
-  "camp.ukmed.exc": ["Tiket pesawat pulang-pergi", "Biaya ETA Inggris", "Sebagian makan", "Asuransi perjalanan"],
-
+  "camp.ukmed.day": [
+    [
+      "09:00",
+      "Kuliah pengantar kedokteran"
+    ],
+    [
+      "11:00",
+      "Praktikum keterampilan klinis (simulasi)"
+    ],
+    [
+      "14:00",
+      "Sesi mentor bersama mahasiswa kedokteran"
+    ],
+    [
+      "16:00",
+      "Lokakarya wawancara MMI"
+    ],
+    [
+      "19:00",
+      "Jalan-jalan malam di London"
+    ]
+  ],
+  "camp.ukmed.inc": [
+    "Biaya program",
+    "Asrama universitas",
+    "Bahan praktikum",
+    "Sertifikat penyelesaian"
+  ],
+  "camp.ukmed.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Biaya ETA Inggris",
+    "Sebagian makan",
+    "Asuransi perjalanan"
+  ],
   "camp.lifesci.t": "Pengalaman laboratorium farmasi dan ilmu hayati",
   "camp.lifesci.p": "Eropa (negara belum dipastikan)",
   "camp.lifesci.s": "Asrama universitas",
   "camp.lifesci.c": "Didampingi pemimpin rombongan",
   "camp.lifesci.d": "Pelajar melakukan eksperimen dasar di laboratorium farmasi dan ilmu hayati, lalu mempresentasikan temuannya pada hari terakhir.",
-  "camp.lifesci.day": [["09:00", "Pengarahan keselamatan lab dan kuliah"], ["10:30", "Praktikum laboratorium"], ["14:00", "Analisis data dan diskusi tim"], ["16:00", "Berbincang dengan peneliti"], ["Hari terakhir", "Presentasi penelitian"]],
-  "camp.lifesci.inc": ["Biaya program", "Asrama universitas", "Bahan laboratorium", "Sertifikat penyelesaian"],
-  "camp.lifesci.exc": ["Tiket pesawat pulang-pergi", "Sebagian makan", "Asuransi perjalanan"],
-
+  "camp.lifesci.day": [
+    [
+      "09:00",
+      "Pengarahan keselamatan lab dan kuliah"
+    ],
+    [
+      "10:30",
+      "Praktikum laboratorium"
+    ],
+    [
+      "14:00",
+      "Analisis data dan diskusi tim"
+    ],
+    [
+      "16:00",
+      "Berbincang dengan peneliti"
+    ],
+    [
+      "Hari terakhir",
+      "Presentasi penelitian"
+    ]
+  ],
+  "camp.lifesci.inc": [
+    "Biaya program",
+    "Asrama universitas",
+    "Bahan laboratorium",
+    "Sertifikat penyelesaian"
+  ],
+  "camp.lifesci.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Sebagian makan",
+    "Asuransi perjalanan"
+  ],
   "camp.uksummer.t": "Summer school universitas di Inggris (dengan kredit akademik)",
   "camp.uksummer.p": "Inggris",
   "camp.uksummer.s": "Asrama universitas",
   "camp.uksummer.c": "Narahubung lokal",
   "camp.uksummer.d": "Pelajar mengikuti mata kuliah akademik seperti bisnis atau psikologi di kampus universitas. Tergantung mata kuliahnya, peserta menerima sertifikat atau transkrip nilai.",
-  "camp.uksummer.day": [["09:30", "Kuliah mata kuliah"], ["11:30", "Diskusi seminar"], ["14:00", "Belajar di perpustakaan dan tutorial"], ["16:00", "Kegiatan kampus"], ["Akhir pekan", "Wisata sehari"]],
-  "camp.uksummer.inc": ["Biaya kuliah", "Asrama universitas", "Transkrip dan sertifikat", "Akses fasilitas kampus"],
-  "camp.uksummer.exc": ["Tiket pesawat pulang-pergi", "Biaya ETA Inggris", "Makan", "Asuransi perjalanan"],
-
+  "camp.uksummer.day": [
+    [
+      "09:30",
+      "Kuliah mata kuliah"
+    ],
+    [
+      "11:30",
+      "Diskusi seminar"
+    ],
+    [
+      "14:00",
+      "Belajar di perpustakaan dan tutorial"
+    ],
+    [
+      "16:00",
+      "Kegiatan kampus"
+    ],
+    [
+      "Akhir pekan",
+      "Wisata sehari"
+    ]
+  ],
+  "camp.uksummer.inc": [
+    "Biaya kuliah",
+    "Asrama universitas",
+    "Transkrip dan sertifikat",
+    "Akses fasilitas kampus"
+  ],
+  "camp.uksummer.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Biaya ETA Inggris",
+    "Makan",
+    "Asuransi perjalanan"
+  ],
   "camp.usleader.t": "Program kepemimpinan di kampus AS",
   "camp.usleader.p": "Pantai Timur AS",
   "camp.usleader.s": "Asrama universitas",
   "camp.usleader.c": "Didampingi pemimpin rombongan",
   "camp.usleader.d": "Debat, studi kasus, dan kunjungan perusahaan untuk menjelajahi kepemimpinan dan jalur karier, sekaligus mencicipi kehidupan kampus untuk pertama kalinya.",
-  "camp.usleader.day": [["09:00", "Kuliah kepemimpinan"], ["10:30", "Diskusi studi kasus"], ["13:30", "Kunjungan perusahaan dan organisasi"], ["16:30", "Proyek tim"], ["20:00", "Kumpul di lounge asrama"]],
-  "camp.usleader.inc": ["Biaya program", "Asrama universitas (termasuk makan)", "Transportasi kunjungan", "Pemimpin rombongan pendamping"],
-  "camp.usleader.exc": ["Tiket pesawat pulang-pergi", "Biaya ESTA", "Uang saku", "Asuransi perjalanan"],
-
+  "camp.usleader.day": [
+    [
+      "09:00",
+      "Kuliah kepemimpinan"
+    ],
+    [
+      "10:30",
+      "Diskusi studi kasus"
+    ],
+    [
+      "13:30",
+      "Kunjungan perusahaan dan organisasi"
+    ],
+    [
+      "16:30",
+      "Proyek tim"
+    ],
+    [
+      "20:00",
+      "Kumpul di lounge asrama"
+    ]
+  ],
+  "camp.usleader.inc": [
+    "Biaya program",
+    "Asrama universitas (termasuk makan)",
+    "Transportasi kunjungan",
+    "Pemimpin rombongan pendamping"
+  ],
+  "camp.usleader.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Biaya ESTA",
+    "Uang saku",
+    "Asuransi perjalanan"
+  ],
   "camp.aicode.t": "Bootcamp proyek AI dan coding",
   "camp.aicode.p": "London, Inggris",
   "camp.aicode.s": "Asrama",
   "camp.aicode.c": "Didampingi pemimpin rombongan",
   "camp.aicode.d": "Pelajar merancang dan membuat aplikasi AI secara berkelompok, lalu mempresentasikannya pada hari terakhir. Tidak perlu pengalaman coding.",
-  "camp.aicode.day": [["09:00", "Kuliah konsep AI"], ["10:30", "Proyek tim dan latihan coding"], ["14:00", "Umpan balik mentor"], ["16:00", "Wawancara dan uji coba pengguna"], ["Hari terakhir", "Presentasi demo"]],
-  "camp.aicode.inc": ["Biaya program", "Asrama (tiga kali makan sehari)", "Sewa laptop", "Sertifikat penyelesaian"],
-  "camp.aicode.exc": ["Tiket pesawat pulang-pergi", "Biaya ETA Inggris", "Uang saku", "Asuransi perjalanan"],
-
+  "camp.aicode.day": [
+    [
+      "09:00",
+      "Kuliah konsep AI"
+    ],
+    [
+      "10:30",
+      "Proyek tim dan latihan coding"
+    ],
+    [
+      "14:00",
+      "Umpan balik mentor"
+    ],
+    [
+      "16:00",
+      "Wawancara dan uji coba pengguna"
+    ],
+    [
+      "Hari terakhir",
+      "Presentasi demo"
+    ]
+  ],
+  "camp.aicode.inc": [
+    "Biaya program",
+    "Asrama (tiga kali makan sehari)",
+    "Sewa laptop",
+    "Sertifikat penyelesaian"
+  ],
+  "camp.aicode.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Biaya ETA Inggris",
+    "Uang saku",
+    "Asuransi perjalanan"
+  ],
   "camp.sgstem.t": "Kamp STEM & bahasa Inggris di Singapura",
   "camp.sgstem.p": "Singapura",
   "camp.sgstem.s": "Hotel (guru menginap bersama rombongan)",
   "camp.sgstem.c": "Didampingi guru",
   "camp.sgstem.d": "Kunjungan ke pusat sains dan kelas robotika, berpadu dengan pelajaran bahasa Inggris. Karena jaraknya dekat dan lingkungannya aman, kamp ini banyak dipilih sebagai kamp luar negeri pertama.",
-  "camp.sgstem.day": [["08:30", "Kelas bahasa Inggris"], ["10:30", "Kelas robotika dan coding"], ["13:30", "Pusat sains atau kebun raya"], ["16:30", "Tugas tim"], ["19:00", "Rangkuman harian bersama guru"]],
-  "camp.sgstem.inc": ["Biaya kursus", "Hotel (termasuk sarapan)", "Transportasi lokal", "Guru pendamping"],
-  "camp.sgstem.exc": ["Tiket pesawat pulang-pergi", "Sebagian makan siang dan makan malam", "Uang saku", "Asuransi perjalanan"],
-
+  "camp.sgstem.day": [
+    [
+      "08:30",
+      "Kelas bahasa Inggris"
+    ],
+    [
+      "10:30",
+      "Kelas robotika dan coding"
+    ],
+    [
+      "13:30",
+      "Pusat sains atau kebun raya"
+    ],
+    [
+      "16:30",
+      "Tugas tim"
+    ],
+    [
+      "19:00",
+      "Rangkuman harian bersama guru"
+    ]
+  ],
+  "camp.sgstem.inc": [
+    "Biaya kursus",
+    "Hotel (termasuk sarapan)",
+    "Transportasi lokal",
+    "Guru pendamping"
+  ],
+  "camp.sgstem.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Sebagian makan siang dan makan malam",
+    "Uang saku",
+    "Asuransi perjalanan"
+  ],
   "camp.goldcoast.t": "Bahasa Inggris & alam untuk keluarga di Australia",
   "camp.goldcoast.p": "Gold Coast, Australia",
   "camp.goldcoast.s": "Apartemen keluarga",
   "camp.goldcoast.c": "Koordinator lokal berbahasa Korea",
   "camp.goldcoast.d": "Anak bersekolah bahasa Inggris pada pagi hari; sore hari untuk berselancar dan melihat satwa liar bersama keluarga. Kamp yang santai sekaligus menjadi liburan keluarga.",
-  "camp.goldcoast.day": [["08:30", "Sekolah bahasa Inggris"], ["12:00", "Penjemputan dan makan siang keluarga"], ["14:00", "Les selancar dan pantai"], ["16:30", "Taman satwa liar (dua kali seminggu)"], ["18:00", "Waktu keluarga"]],
-  "camp.goldcoast.inc": ["Biaya kursus bahasa", "Apartemen keluarga", "Dua kali les selancar", "Dukungan koordinator lokal"],
-  "camp.goldcoast.exc": ["Tiket pesawat pulang-pergi", "Biaya ETA Australia", "Makan", "Asuransi perjalanan"],
-
+  "camp.goldcoast.day": [
+    [
+      "08:30",
+      "Sekolah bahasa Inggris"
+    ],
+    [
+      "12:00",
+      "Penjemputan dan makan siang keluarga"
+    ],
+    [
+      "14:00",
+      "Les selancar dan pantai"
+    ],
+    [
+      "16:30",
+      "Taman satwa liar (dua kali seminggu)"
+    ],
+    [
+      "18:00",
+      "Waktu keluarga"
+    ]
+  ],
+  "camp.goldcoast.inc": [
+    "Biaya kursus bahasa",
+    "Apartemen keluarga",
+    "Dua kali les selancar",
+    "Dukungan koordinator lokal"
+  ],
+  "camp.goldcoast.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Biaya ETA Australia",
+    "Makan",
+    "Asuransi perjalanan"
+  ],
   "camp.clark.t": "Bahasa Inggris intensif di Filipina",
   "camp.clark.p": "Clark, Filipina",
   "camp.clark.s": "Asrama",
   "camp.clark.c": "Guru pengasuh asal Korea",
   "camp.clark.d": "Kursus bahasa Inggris intensif dengan porsi pelajaran privat yang besar, cocok bagi pelajar yang ingin cepat meningkatkan kemampuan berbicara.",
-  "camp.clark.day": [["07:30", "Tes kosakata"], ["08:00", "Empat sesi pelajaran privat"], ["13:00", "Dua sesi pelajaran kelompok"], ["16:00", "Belajar mandiri dan PR"], ["19:30", "Cek bersama guru pengasuh"]],
-  "camp.clark.inc": ["Biaya kursus (termasuk kelas privat)", "Asrama (tiga kali makan sehari)", "Pendampingan oleh guru pengasuh", "Laporan perkembangan mingguan"],
-  "camp.clark.exc": ["Tiket pesawat pulang-pergi", "Izin belajar (SSP) dan biaya administrasi", "Uang saku", "Asuransi perjalanan"]
+  "camp.clark.day": [
+    [
+      "07:30",
+      "Tes kosakata"
+    ],
+    [
+      "08:00",
+      "Empat sesi pelajaran privat"
+    ],
+    [
+      "13:00",
+      "Dua sesi pelajaran kelompok"
+    ],
+    [
+      "16:00",
+      "Belajar mandiri dan PR"
+    ],
+    [
+      "19:30",
+      "Cek bersama guru pengasuh"
+    ]
+  ],
+  "camp.clark.inc": [
+    "Biaya kursus (termasuk kelas privat)",
+    "Asrama (tiga kali makan sehari)",
+    "Pendampingan oleh guru pengasuh",
+    "Laporan perkembangan mingguan"
+  ],
+  "camp.clark.exc": [
+    "Tiket pesawat pulang-pergi",
+    "Izin belajar (SSP) dan biaya administrasi",
+    "Uang saku",
+    "Asuransi perjalanan"
+  ],
+  "hero.eyebrow": "BigLinker Camps · Seoul",
+  "hero.ctaDiag": "Mulai cek kecocokan kamp",
+  "map.label": "Peta dunia yang menghubungkan Korea dengan tujuan kamp",
+  "map.out": "Korea → Dunia",
+  "map.in": "Dunia → Korea",
+  "map.outNote": "{n} tujuan kamp bagi pelajar Korea",
+  "map.inNote": "Rute ke Seoul · informasi dalam {n} bahasa",
+  "map.hintOut": "Pilih titik untuk melihat kamp di wilayah tersebut.",
+  "map.hintIn": "Pilih titik untuk melihat situs dalam bahasa tersebut.",
+  "map.pause": "Jeda animasi",
+  "map.play": "Putar animasi",
+  "map.seoul": "Seoul",
+  "map.campsN": "{n} contoh kamp",
+  "map.viewRegion": "Lihat kamp di wilayah ini",
+  "map.langs": "Bahasa",
+  "map.viewLang": "Lihat dalam bahasa ini",
+  "map.koreaCamps": "Lihat kamp di Korea",
+  "map.caption": "Peta ini menunjukkan tujuan contoh kamp kami dan wilayah bahasa yang didukung situs ini.",
+  "map.drag": "Geser ke samping untuk menjelajahi peta.",
+  "place.uk": "Inggris",
+  "place.europe": "Eropa",
+  "place.canada": "Ontario, Kanada",
+  "place.useast": "Pantai Timur AS",
+  "place.clark": "Clark, Filipina",
+  "place.cebu": "Cebu, Filipina",
+  "place.sg": "Singapura · Johor Bahru",
+  "place.goldcoast": "Gold Coast, Australia",
+  "place.auckland": "Auckland, Selandia Baru",
+  "place.jeju": "Jeju",
+  "place.northamerica": "Amerika Utara",
+  "place.mexico": "Meksiko",
+  "place.brazil": "Brasil",
+  "place.japan": "Jepang",
+  "place.china": "Tiongkok",
+  "place.vietnam": "Vietnam",
+  "place.thailand": "Thailand",
+  "place.indonesia": "Indonesia",
+  "lab.listTitle": "Semua kamp",
+  "diag.kicker": "Cek kecocokan kamp",
+  "diag.title": "Enam pertanyaan, tiga saran yang disesuaikan",
+  "diag.deck": "Pilih jenjang kelas, tujuan, kebutuhan spesifik, negara, durasi, dan anggaran, lalu kami akan menampilkan tiga kamp yang paling mendekati jawaban Anda. Prosesnya sekitar dua menit.",
+  "diag.start": "Mulai cek kecocokan",
+  "diag.step": "{n} / {t}",
+  "diag.next": "Lanjut",
+  "diag.prev": "Kembali",
+  "diag.skip": "Lewati",
+  "diag.result": "Lihat hasil",
+  "diag.required": "Silakan pilih setidaknya satu.",
+  "diag.upTo": "Maks. {n}",
+  "diag.multi": "Boleh pilih lebih dari satu",
+  "diag.close": "Tutup cek kecocokan",
+  "q1.t": "Siapa yang akan ikut?",
+  "q2.t": "Bagaimana rencana keberangkatannya?",
+  "q2.parent": "Bersama orang tua",
+  "q2.solo": "Tanpa orang tua (didampingi atau diawasi)",
+  "q2.any": "Keduanya boleh",
+  "q3.t": "Apa yang paling Anda harapkan dari kamp?",
+  "q3.study": "Meningkatkan bahasa Inggris dan kemampuan akademik",
+  "q3.act": "Membangun rasa percaya diri lewat kegiatan langsung",
+  "q3.exp": "Mengenal budaya baru dan teman baru",
+  "q3.career": "Menjelajahi karier dan mengenal dunia kampus lebih awal",
+  "q4.t": "Ada kebutuhan spesifik?",
+  "need.first": "Kamp luar negeri pertama",
+  "need.speaking": "Latihan berbicara",
+  "need.school": "Kehidupan di sekolah lokal",
+  "need.medical": "Kedokteran atau farmasi",
+  "need.stem": "AI, coding, dan sains",
+  "need.academic": "Kuliah atau kredit universitas",
+  "need.nature": "Alam terbuka dan olahraga",
+  "need.family": "Sekaligus liburan keluarga",
+  "q5.t": "Ada negara atau wilayah yang diinginkan?",
+  "q5.any": "Di mana saja boleh",
+  "q6.t": "Durasi dan anggaran",
+  "q6.len": "Durasi",
+  "q6.budget": "Anggaran (di luar tiket pesawat)",
+  "q6.any": "Tidak ada preferensi",
+  "res.title": "Hasil Anda",
+  "res.deck": "Tiga kamp ini paling mendekati jawaban Anda. Skor kecocokan menggabungkan jenjang kelas, tujuan, kebutuhan, wilayah, durasi, dan anggaran.",
+  "res.match": "Kecocokan {n}%",
+  "res.why": "Mengapa cocok",
+  "res.cta": "Konsultasikan hasil ini",
+  "res.again": "Ulangi dari awal",
+  "res.toList": "Tampilkan daftar dengan filter ini",
+  "res.outside": "Di luar rentang usia",
+  "res.answers": "Jawaban Anda",
+  "res.note": "Saran ini didasarkan pada contoh kamp kami. Penyelenggara dan jadwal yang sebenarnya kami pastikan saat konsultasi.",
+  "r.age": "Untuk {v}",
+  "r.tend": "Fokus {v} {n}",
+  "r.len": "Program {v}",
+  "r.budget": "Sesuai anggaran",
+  "tend.label": "Fokus",
+  "tend.study": "Belajar",
+  "tend.act": "Aktivitas",
+  "tend.exp": "Pengalaman",
+  "tend.career": "Karier",
+  "tend.type.study": "Fokus belajar",
+  "tend.type.act": "Fokus aktivitas",
+  "tend.type.exp": "Fokus pengalaman",
+  "tend.type.career": "Fokus karier",
+  "f.tend": "Fokus",
+  "sort.career": "Porsi karier terbanyak",
+  "cap.vocal": "Pelajaran vokal. Satu per satu, peserta melatih bagiannya dengan iringan keyboard dari pelatih.",
+  "pm.title": "Model kemitraan",
+  "pm1.tag": "Perjanjian keagenan",
+  "pm1.t": "Rekrutmen dan rekomendasi",
+  "pm1.d": "Kami menangani promosi dalam bahasa Korea, konsultasi keluarga, pemeriksaan kelayakan, dan persiapan berkas pendaftaran. Kami tidak merekomendasikan pelajar yang tidak memenuhi persyaratan masuk lembaga Anda.",
+  "pm2.tag": "Perancangan bersama",
+  "pm2.t": "Program yang disesuaikan untuk pelajar Korea",
+  "pm2.d": "Kami menyesuaikan program yang sudah ada dengan jenjang kelas, jadwal libur, dan minat pelajar Korea, atau bersama-sama merancang kursus singkat seperti program pengenalan kedokteran, summer school, dan bootcamp AI.",
+  "pm3.tag": "Inbound",
+  "pm3.t": "Pelaksanaan di Seoul",
+  "pm3.d": "Saat rombongan pelajar Anda datang ke Korea, BigLinker mengelola akomodasi, transportasi, kunjungan ke universitas, program budaya, dan penempatan staf di lokasi.",
+  "pm4.tag": "Studi lanjut",
+  "pm4.t": "Jalur studi lanjutan",
+  "pm4.d": "Bersama lembaga mitra, kami menyepakati jalur dari kamp menuju program foundation, sarjana, dan pascasarjana, yang terhubung dengan bimbingan seleksi masuk BigLinker.",
+  "pp.title": "Alur kemitraan",
+  "pp1.t": "Pertemuan awal",
+  "pp1.d": "Kami meninjau bersama isi program, rentang usia, jadwal, dan kapasitas.",
+  "pp2.t": "Peninjauan standar",
+  "pp2.d": "Kami memeriksa kebijakan perlindungan anak, akomodasi, transportasi, prosedur darurat, dan persyaratan asuransi.",
+  "pp3.t": "Perjanjian",
+  "pp3.d": "Perjanjian keagenan atau MOU menetapkan komisi, pengembalian dana, dan tanggung jawab secara tertulis.",
+  "pp4.t": "Rekrutmen dan persiapan",
+  "pp4.d": "Materi berbahasa Korea, sesi informasi, pemeriksaan awal dokumen, dan orientasi pra-keberangkatan.",
+  "pp5.t": "Pelaksanaan dan pelaporan",
+  "pp5.d": "Kami mendampingi rombongan, menjaga komunikasi di lokasi, serta membagikan data pendaftaran dan umpan balik pelajar secara berkala.",
+  "ps.title": "Standar operasional",
+  "ps1": "Tanpa biaya di muka. Komisi hanya berlaku untuk pelajar yang benar-benar mendaftar.",
+  "ps2": "Kami tidak pernah merekrut dengan menjanjikan penerimaan atau hasil tertentu.",
+  "ps3": "Kami memeriksa kesiapan akademik, bahasa Inggris, dan wawancara sebelum merekomendasikan pelajar, serta menggunakan pemeriksaan dokumen berbasis AI untuk mengurangi kekurangan berkas.",
+  "ps4": "Data pendaftaran, umpan balik pelajar, dan kendala operasional dilaporkan dalam format yang disepakati.",
+  "ps5": "BigLinker menangani konsultasi orang tua dan seluruh komunikasi dalam bahasa Korea."
 }
